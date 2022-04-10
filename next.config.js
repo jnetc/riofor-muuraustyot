@@ -1,6 +1,32 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+// const withPWA = require('next-pwa');
+// const runtimeCaching = require('next-pwa/cache');
 
-module.exports = nextConfig
+module.exports = {
+  reactStrictMode: true,
+  i18n: {
+    locales: ['ru', 'fi'],
+    defaultLocale: 'fi',
+    localeDetection: false,
+  },
+  images: {
+    domains: ['www.datocms-assets.com'],
+  },
+};
+// module.exports = withPWA({
+//   reactStrictMode: true,
+//   pwa: {
+//     dest: 'public',
+//     register: true,
+//     skipWaiting: true,
+//     runtimeCaching,
+//     disable: process.env.NODE_ENV === 'development',
+//   },
+//   i18n: {
+//     locales: ['ru', 'fi'],
+//     defaultLocale: 'fi',
+//     localeDetection: false,
+//   },
+//   images: {
+//     domains: ['www.datocms-assets.com'],
+//   },
+// });

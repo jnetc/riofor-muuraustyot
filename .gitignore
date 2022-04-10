@@ -9,6 +9,7 @@
 /coverage
 
 # next.js
+/_next/
 /.next/
 /out/
 
@@ -26,10 +27,36 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
-.env*.local
+.env
+.env.*
 
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
+
+# resources
+/source
+/sources
+/resource
+/resources
+
+#VS Code
+.vscode
+
+# Server Workers
+/public/sw.js
+/public/service-worker.js
+/public/workbox-*.js
+/public/worker-*.js
+/public/sw.js.map
+/public/service-worker.js.map
+/public/workbox-*.js.map
+/public/worker-*.js.map
+
+# Lighthouse reports
+*.report.html
+
+# Local Netlify folder
+.netlify

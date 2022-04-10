@@ -1,0 +1,22 @@
+/*
+Don't put font-face in styled-components!!!
+because of this, has a strange visual effect
+when iterating elements for the first time.
+*/
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 100%;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 100%;
+}
