@@ -4,16 +4,29 @@
   }
 }
 :root {
-  --bg: #909da5;
+  --green: #225504;
+  --red: #c00225;
+}
+
+html[data-theme='light'] {
+  --bg: #929ea5;
   --primary-color: #060d0c;
   --secondary-color: #c1ced1;
   --txt-light-color: #2f383a;
   --btn: #182825;
   --project-border: #545d6a;
   --project: #182825;
-  --green: #225504;
-  --red: #c00225;
 }
+html[data-theme='dark'] {
+  --bg: #060d0c;
+  --primary-color: #929ea5;
+  --secondary-color: #c1ced1;
+  --txt-light-color: #2f383a;
+  --btn: #182825;
+  --project-border: #545d6a;
+  --project: #182825;
+}
+
 *,
 ::after,
 ::before {
@@ -23,7 +36,7 @@
   text-size-adjust: none;
 }
 html {
-  background-color: var(--bg);
+  transition: all 0.3s ease-in-out;
 }
 html,
 body,
@@ -76,7 +89,7 @@ button {
 
 p,
 span {
-  color: var(--txt-light-color);
+  color: var(--primary-color);
 }
 
 main {

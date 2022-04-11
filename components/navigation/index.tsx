@@ -1,6 +1,7 @@
 import { Logo } from './Logo';
-import { NavLinks } from './NavLinks';
-import { LangButtons } from './LangButtons';
+import { NavLinks } from './nav-links/NavLinks';
+import { LangButtons } from './lang-buttons/LangButtons';
+import { ThemeButton } from './theme-button/ThemeButton';
 import styles from './navigation.module.css';
 
 const Navigation = () => {
@@ -9,6 +10,7 @@ const Navigation = () => {
       <Logo />
       <NavLinks />
       <LangButtons />
+      <ThemeButton />
     </header>
   );
 };

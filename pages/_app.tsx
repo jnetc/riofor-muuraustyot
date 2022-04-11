@@ -1,6 +1,5 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-
 // Font style
 import '@Styles/fonts.css';
 import '@Styles/globals.css';
@@ -23,6 +22,17 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="muuraustyöt, riofor, riofor muuraustyöt, muuraus, julkisivutyö, rappaus"
         />
         <meta name="mobile-web-app-capable" content="yes" />
+
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: light)"
+          content="#929ea5"
+        />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: dark)"
+          content="#060d0c"
+        />
 
         <link rel="alternate" href="https://riofor.com/ru" hrefLang="ru" />
         <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml" />

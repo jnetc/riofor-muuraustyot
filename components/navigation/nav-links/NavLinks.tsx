@@ -1,15 +1,15 @@
 import { NavLink } from './NavLink';
-import { useState } from 'react';
 // Hook
 import { useStore } from '@Hooks/useStore';
 import { useModal } from '@Hooks/useModal';
 
 import Modal from '@Components/modal/Modal';
 
+import styles from './links.module.css';
+
 export const NavLinks = () => {
   const { language } = useStore();
-  const { modal, openModal } = useModal();
-  // const [openMenu, setOpenMenu] = useState(modal);
+  const { openModal } = useModal();
 
   const openMobileMenu = () => openModal({ active: true });
 
@@ -22,10 +22,10 @@ export const NavLinks = () => {
   });
   return (
     <>
-      <nav className="navigation">{links}</nav>
+      <nav className={styles.navigation}>{links}</nav>
       <button
         type="button"
-        className="nav-mob-btn"
+        className={styles.nav_mob_btn}
         aria-label="menu button"
         onClick={openMobileMenu}
       >
@@ -39,7 +39,7 @@ export const NavLinks = () => {
         </svg>
       </button>
       <Modal>
-        <div className="mob-navigation">{links}</div>
+        <div className={styles.mob_navigation}>{links}</div>
       </Modal>
     </>
   );
