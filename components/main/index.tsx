@@ -1,8 +1,13 @@
+import { LeftSide } from './left-side/LeftSide';
+import { RightSide } from './right-side/RightSide';
+
+import styles from './main.module.css';
+
 const Main = () => {
   return (
-    <section>
-      <div>left side</div>
-      <div>right side</div>
+    <section id="main" className={styles.module}>
+      <LeftSide />
+      <RightSide />
     </section>
   );
 };

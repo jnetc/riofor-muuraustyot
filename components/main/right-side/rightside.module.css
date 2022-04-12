@@ -1,0 +1,13 @@
+.module {
+  width: clamp(200px, 50vw, 650px);
+  height: clamp(200px, 50vw, 663px);
+  position: relative;
+  margin-inline: auto;
+}
+@media screen and (max-width: 960px) {
+  .module {
+    width: clamp(300px, 60vw, 650px);
+    height: clamp(300px, 60vw, 663px);
+    order: 1;
+  }
+}

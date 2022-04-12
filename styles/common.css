@@ -1,4 +1,4 @@
-#prices,
+#projects,
 #services,
 #about {
   display: flex;
@@ -14,14 +14,12 @@
 
 .main-title,
 .section-title {
+  color: var(--primary-color);
   text-transform: uppercase;
   line-height: 1.1;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 .main-title {
-  font-size: clamp(3em, 5vw, 6em);
+  font-size: clamp(2.5em, 5vw, 6em);
   word-spacing: 999px;
 }
 .section-title {
@@ -58,4 +56,63 @@
 .align-center {
   margin-inline: auto;
   text-align: center;
+}
+
+.button {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding-block: clamp(0.9rem, 2vw, 1.3rem);
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  font-size: clamp(0.9rem, 2vw, 1.4rem);
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  line-height: 15px;
+  border-radius: clamp(4px, 2vw, 10px);
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  z-index: 5;
+  white-space: nowrap;
+}
+.button:disabled {
+  /* background: lighten($btn, 10); */
+  box-shadow: none;
+}
+.button.fill {
+  width: fit-content;
+  padding-inline: clamp(1rem, 2vw, 2rem);
+  color: var(--btn-txt-fill);
+  background: var(--btn-fill);
+  box-shadow: 0 10px 15px var(--btn-fill-shadow-darken),
+    0 30px 30px var(--btn-fill-shadow-lighten);
+}
+.button.fill:hover {
+  background: var(--primary-color);
+  box-shadow: none;
+}
+.button.fill svg {
+  fill: var(--btn-txt-fill);
+}
+.button.line {
+  width: fit-content;
+  padding-inline: clamp(1rem, 2vw, 2rem);
+  color: var(--btn-txt-line);
+  border-color: 11px;
+  border: 2px solid var(--project-border);
+  /* background: var(--secondary-color); */
+  /* box-shadow: 0 5px 5px transparentize($btn, 0.95),
+    0 20px 20px transparentize($btn, 0.95); */
+}
+.button.line:hover {
+  border-color: var(--secondary-color);
+  box-shadow: none;
+}
+.button.link-icon {
+  grid-template-columns: max-content 30px;
+  justify-items: flex-end;
 }

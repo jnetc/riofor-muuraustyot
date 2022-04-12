@@ -38,8 +38,8 @@ const Home: NextPage = ({
         <Navigation />
         <main>
           <Main />
-          <Services />
           <Projects />
+          <Services />
           <About />
         </main>
       </Modal.Provider>
@@ -50,7 +50,7 @@ const Home: NextPage = ({
 export default Home;
 
 export const getStaticProps: GetStaticProps = async context => {
-  const data = await request({ query, variables: { locale: context.locale } });
+  // const data = await request({ query, variables: { locale: context.locale } });
 
   return {
     props: {
@@ -59,4 +59,14 @@ export const getStaticProps: GetStaticProps = async context => {
       languages: context.locales,
     },
   };
+};
+
+const data = {
+  home: {
+    title: 'etsitkö muurareitä?',
+    phone: '+358405815359',
+    email: 'maria@riofor.com',
+    description:
+      'Olemme perustaneet itsemme alan ammattilaisiksi ja meillä on laaja kokemus muurauksen rakentamisesta.',
+  },
 };

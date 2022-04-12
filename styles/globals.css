@@ -12,8 +12,15 @@ html[data-theme='light'] {
   --bg: #929ea5;
   --primary-color: #060d0c;
   --secondary-color: #c1ced1;
-  --txt-light-color: #2f383a;
-  --btn: #182825;
+
+  --btn-fill: #182825;
+  --btn-txt-fill: #c1ced1;
+  --btn-fill-shadow-darken: rgba(24, 40, 37, 0.3);
+  --btn-fill-shadow-lighten: rgba(24, 40, 37, 0.2);
+
+  --btn-line: #182825;
+  --btn-txt-line: #2f383a;
+
   --project-border: #545d6a;
   --project: #182825;
 }
@@ -21,8 +28,15 @@ html[data-theme='dark'] {
   --bg: #060d0c;
   --primary-color: #929ea5;
   --secondary-color: #c1ced1;
-  --txt-light-color: #2f383a;
-  --btn: #182825;
+
+  --btn-fill: #c1ced1;
+  --btn-txt-fill: #182825;
+  --btn-fill-shadow-darken: rgba(193, 206, 209, 0.2);
+  --btn-fill-shadow-lighten: rgba(193, 206, 209, 0.1);
+
+  --btn-line: #929ea5;
+  --btn-txt-line: #929ea5;
+
   --project-border: #545d6a;
   --project: #182825;
 }
@@ -36,7 +50,7 @@ html[data-theme='dark'] {
   text-size-adjust: none;
 }
 html {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 html,
 body,
@@ -63,6 +77,7 @@ label,
 div,
 time {
   font-family: 'Roboto';
+  transition: all 0.2s ease-in-out;
 }
 
 a {

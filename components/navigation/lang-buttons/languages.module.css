@@ -20,23 +20,20 @@
 }
 
 .module :global(.nav-lang) {
+  width: var(--size);
+  height: var(--size);
+  border-radius: 5px;
   color: var(--primary-color);
+  font-size: 1em;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  border-radius: 5px;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
 
-.module :global(.nav-lang) {
-  width: var(--size);
-  height: var(--size);
-  color: var(--primary-color);
-  font-size: 1em;
-}
-
 .module :global(.nav-lang.active) {
-  color: var(--secondary-color);
+  color: var(--bg);
+  transition: all 0.3s ease-in-out;
 }
 
 .module :global(.nav-lang:nth-of-type(1).active ~ .selected-lang) {

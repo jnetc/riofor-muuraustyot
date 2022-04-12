@@ -28,7 +28,7 @@
 .navigation :global(.nav-link):hover,
 .mob_navigation :global(.nav-link):hover {
   background-color: var(--primary-color);
-  color: var(--secondary-color);
+  color: var(--bg);
 }
 
 /* Mobile navigation button */
