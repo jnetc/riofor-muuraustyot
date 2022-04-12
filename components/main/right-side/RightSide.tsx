@@ -8,10 +8,7 @@ export const RightSide = () => {
       <Image
         src="/images/riofor.svg"
         alt="riofor illustration"
-        // width={650}
-        // height={663}
         layout="fill"
-        // objectFit="contain"
         priority
       />
     </div>

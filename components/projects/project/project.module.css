@@ -1,0 +1,122 @@
+.module {
+  display: grid;
+  grid-template-columns:
+    40px 120px minmax(100px, 200px) minmax(100px, 700px)
+    minmax(auto, 700px);
+  align-items: flex-end;
+  column-gap: 1rem;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  font-size: clamp(0.9rem, 2vw, 1.4rem);
+  letter-spacing: 0.05rem;
+  border-radius: clamp(4px, 2vw, 10px);
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  z-index: 5;
+}
+.module.active,
+.module.finished {
+  color: var(--primary-color);
+}
+.module.active {
+  background-color: var(--project-active);
+}
+
+.module.finished {
+  background-color: var(--project-finished);
+}
+.module.active:hover,
+.module.finished:hover {
+  border-color: transparent;
+  border: 2px solid var(--project-hover);
+}
+
+.status {
+  grid-column: 1;
+  width: 40px;
+  height: 40px;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+.status.active::after,
+.status.active::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  background: var(--primary-color);
+  transform: translate(-50%, -50%);
+}
+.status.active::before {
+  box-shadow: 0 0 0px 0px var(--primary-color);
+  animation: status-active 2s ease-in-out infinite;
+}
+
+@keyframes status-active {
+  50% {
+    box-shadow: 0 0 5px 15px transparent;
+  }
+  51% {
+    box-shadow: 0 0 0px 0px transparent;
+  }
+}
+
+.date {
+  grid-column: 2;
+  font-weight: bold;
+}
+.contractor {
+  grid-column: 3;
+}
+.name {
+  grid-column: 4;
+}
+.address {
+  grid-column: 5;
+  padding-right: 15px;
+  font-style: normal;
+}
+:where(.date, .contractor, .name, .address) {
+  position: relative;
+  padding-block-start: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+:where(.date, .contractor, .name, .address)::after {
+  content: attr(data-label);
+  position: absolute;
+  top: -0.2rem;
+  left: 0;
+  color: var(--label);
+  font-size: 0.6em;
+  font-weight: 400;
+  white-space: nowrap;
+  z-index: 5;
+}
+.module svg {
+  fill: var(--primary-color);
+}
+
+@media screen and (max-width: 960px) {
+  .name,
+  .address {
+    /* display: none; */
+  }
+}
+@media screen and (max-width: 450px) {
+  .contractor {
+    display: none;
+  }
+}

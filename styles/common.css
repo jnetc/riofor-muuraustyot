@@ -83,8 +83,13 @@
   /* background: lighten($btn, 10); */
   box-shadow: none;
 }
-.button.fill {
+.button.fit {
   width: fit-content;
+}
+.button.extend {
+  width: 100%;
+}
+.button.fill {
   padding-inline: clamp(1rem, 2vw, 2rem);
   color: var(--btn-txt-fill);
   background: var(--btn-fill);
@@ -99,14 +104,10 @@
   fill: var(--btn-txt-fill);
 }
 .button.line {
-  width: fit-content;
   padding-inline: clamp(1rem, 2vw, 2rem);
   color: var(--btn-txt-line);
   border-color: 11px;
-  border: 2px solid var(--project-border);
-  /* background: var(--secondary-color); */
-  /* box-shadow: 0 5px 5px transparentize($btn, 0.95),
-    0 20px 20px transparentize($btn, 0.95); */
+  border: 2px solid var(--btn-txt-line);
 }
 .button.line:hover {
   border-color: var(--secondary-color);

@@ -36,10 +36,13 @@ export function request({
 export const query = gql`
   query MyQuery($locale: SiteLocale) {
     home(locale: $locale) {
-      email
-      phone
-      title
-      description
+      ...HomeRecordFragment
     }
+  }
+  fragment HomeRecordFragment on HomeRecord {
+    title
+    phone
+    email
+    description
   }
 `;
