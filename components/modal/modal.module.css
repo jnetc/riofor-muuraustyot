@@ -18,6 +18,7 @@
   position: absolute;
   top: 1rem;
   right: 2rem;
+  z-index: 999;
 }
 .module :global(.close-btn svg) {
   width: 13px;

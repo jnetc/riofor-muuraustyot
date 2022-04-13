@@ -5,7 +5,7 @@ import styles from './modal.module.css';
 const Modal: FC<{ children: ReactChild }> = ({ children }) => {
   const { modal, openModal } = useModal();
 
-  const openMobileMenu = () => openModal({ active: false });
+  const openMobileMenu = () => openModal({ active: false, data: null });
 
   return (
     <div className={`${styles.module} ${modal.active && styles.open}`}>

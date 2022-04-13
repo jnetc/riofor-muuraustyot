@@ -12,8 +12,8 @@ export const setInitialTheme = `
 // Insert extra css, to prevent flash when DOM is loaded
 export const extraCSS = `
   html[data-theme=dark] {
-    background-color: #060d0c;
-    color: #929ea5;
+    background-color: #1a1e1e;
+    color: #9caab2;
   }
   html[data-theme=light] {
     background-color: #929ea5;

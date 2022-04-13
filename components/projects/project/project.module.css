@@ -110,13 +110,26 @@
 }
 
 @media screen and (max-width: 960px) {
-  .name,
+  .module {
+    grid-template-columns: 40px 90px minmax(100px, 200px) minmax(100px, 700px);
+    align-items: center;
+  }
+  :where(.date, .contractor, .name, .address) {
+    padding-block-start: 0.7rem;
+    font-weight: bold;
+  }
+  :where(.date, .contractor, .name, .address)::after {
+    top: -0.1rem;
+  }
   .address {
-    /* display: none; */
+    display: none;
   }
 }
 @media screen and (max-width: 450px) {
-  .contractor {
+  .module {
+    grid-template-columns: 40px 90px minmax(100px, 200px);
+  }
+  .name {
     display: none;
   }
 }

@@ -31,8 +31,8 @@ html[data-theme='light'] {
   --label: #5a626d;
 }
 html[data-theme='dark'] {
-  --bg: #060d0c;
-  --primary-color: #929ea5;
+  --bg: #1a1e1e;
+  --primary-color: #a9b8c0;
   --secondary-color: #c1ced1;
 
   --btn-fill: #c1ced1;
@@ -43,8 +43,8 @@ html[data-theme='dark'] {
   --btn-line: #929ea5;
   --btn-txt-line: #929ea5;
 
-  --project-active: #1e2122;
-  --project-finished: #131517;
+  --project-active: #25292a;
+  --project-finished: #1e2122;
   --project-txt-color: #060d0c;
   /* --project-active-shadow-darken: rgba(193, 206, 209, 0.2);
   --project-active-shadow-lighten: rgba(193, 206, 209, 0.1); */
