@@ -1,10 +1,42 @@
 /* Navigation */
-.navigation {
+.desktop_navigation {
   display: flex;
   column-gap: 1rem;
   margin-inline-start: auto;
   align-items: center;
 }
+.mobile_navigation {
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+  background-color: var(--bg);
+  z-index: 9999;
+}
+.mobile_navigation.open {
+  display: flex;
+}
+
+.mobile_navigation :global(.close-btn) {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  z-index: 999;
+}
+.mobile_navigation :global(.close-btn svg) {
+  width: 13px;
+  height: 13px;
+  fill: none;
+  transform: scale(1.5);
+}
+.mobile_navigation :global(.close-btn svg path) {
+  stroke: var(--primary-color);
+}
+
 .mob_navigation {
   display: flex;
   flex-direction: column;
@@ -13,7 +45,7 @@
   row-gap: 1rem;
 }
 
-.navigation :global(.nav-link),
+.desktop_navigation :global(.nav-link),
 .mob_navigation :global(.nav-link) {
   color: var(--primary-color);
   letter-spacing: 0.08em;
@@ -25,7 +57,7 @@
   cursor: pointer;
 }
 
-.navigation :global(.nav-link):hover,
+.desktop_navigation :global(.nav-link):hover,
 .mob_navigation :global(.nav-link):hover {
   background-color: var(--primary-color);
   color: var(--bg);
@@ -51,7 +83,7 @@
 }
 
 @media screen and (max-width: 960px) {
-  .navigation {
+  .desktop_navigation {
     display: none;
   }
   .nav_mob_btn {

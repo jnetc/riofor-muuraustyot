@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, MouseEvent } from 'react';
 // Hook
 import { useStore } from '@Hooks/useStore';
+import { useModal } from '@Hooks/useModal';
 // Components
 import { Project } from './project/Project';
 // Helpers
@@ -10,6 +11,7 @@ import styles from './projects.module.css';
 
 const Projects = () => {
   const { data, language } = useStore();
+  const { openModal } = useModal();
   const [toggle, setToggle] = useState(false);
 
   // If we don't have projects
@@ -49,13 +51,25 @@ const Projects = () => {
 
   const toggleHandler = () => setToggle(!toggle);
 
+  const openDetails = (event: MouseEvent<HTMLDivElement>) => {
+    const el = event.target as HTMLDivElement;
+    const id = el.closest('section')?.id || '';
+    const findProject = data.project.projects.find(
+      project => project.id === id
+    );
+
+    openModal({ active: true, data: findProject });
+  };
+
   return (
     <section id="projects">
       <h2 className="section-title">{context.title[language]}</h2>
       <h3 className={styles.title}>
         {context.active[language]} {active.length}
       </h3>
-      <div className={styles.blocks}>{inprocess}</div>
+      <div className={styles.blocks} onClick={openDetails}>
+        {inprocess}
+      </div>
       <h3 className={styles.title}>
         {context.finished[language]} {finished.length}
       </h3>

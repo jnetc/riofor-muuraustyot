@@ -9,8 +9,8 @@ const state: State = {
   openModal: object => object,
 };
 
-export const Modal = createContext(state);
+export const ModalContext = createContext(state);
 
 export const useModal = () => {
-  return useContext(Modal);
+  return useContext(ModalContext);
 };

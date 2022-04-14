@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { ProjectType } from '@Types';
 // Component
 import Modal from '@Components/modal/Modal';
+
+// import { useModal } from '@Hooks/useModal';
 import styles from './details.module.css';
 
 export const Details: FC<{ data: ProjectType<string> }> = ({ data }) => {

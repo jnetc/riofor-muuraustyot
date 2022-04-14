@@ -15,13 +15,16 @@ export const Project: FC<{ data: ProjectType<string> }> = ({ data }) => {
   const { openModal } = useModal();
   const modalHandler = () => openModal({ active: true, data });
 
+  // console.log(data.id, data.projectNumber);
+
   return (
     <>
-      <div
+      <section
         className={`${styles.module} ${
           data.completed ? styles.finished : styles.active
         }`}
         onClick={modalHandler}
+        id={data.id}
       >
         <span
           className={
@@ -57,8 +60,8 @@ export const Project: FC<{ data: ProjectType<string> }> = ({ data }) => {
           <span className="expand-icon dark" />
         )}
         {/* <Image image={data?.image} alt={data?.name} modal={false} /> */}
-      </div>
-      <Details data={data} />
+      </section>
+      {/* <Details data={data} /> */}
     </>
   );
 };

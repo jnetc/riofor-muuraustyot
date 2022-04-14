@@ -1,17 +1,16 @@
+import { useState, useEffect } from 'react';
 import { NavLink } from './NavLink';
 // Hook
 import { useStore } from '@Hooks/useStore';
-import { useModal } from '@Hooks/useModal';
-
-import Modal from '@Components/modal/Modal';
+// Components
+import { NavMobButton } from './NavMobButton';
+import { NavMobLinks } from './NavMobLinks';
 
 import styles from './links.module.css';
 
 export const NavLinks = () => {
   const { language } = useStore();
-  const { openModal } = useModal();
-
-  const openMobileMenu = () => openModal({ active: true });
+  const [openNavMenu, setOpenNavMenu] = useState(false);
 
   const links = urls.map(link => {
     return (
@@ -20,27 +19,30 @@ export const NavLinks = () => {
       </NavLink>
     );
   });
+
+  useEffect(() => {
+    if (openNavMenu) {
+      document.body.style.overflow = 'hidden';
+      return;
+    }
+    document.body.removeAttribute('style');
+  }, [openNavMenu]);
+
   return (
     <>
-      <nav className={styles.navigation}>{links}</nav>
-      <button
-        type="button"
-        className={styles.nav_mob_btn}
-        aria-label="menu button"
-        onClick={openMobileMenu}
+      <nav
+        aria-labelledby="desktop navigation"
+        className={styles.desktop_navigation}
       >
-        <svg viewBox="0 0 17 13">
-          <path
-            d="M15.8323 6.59219H1.83228M10.8323 11.5765H1.83228M15.8323 1.57574H1.83228"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </button>
-      <Modal>
-        <div className={styles.mob_navigation}>{links}</div>
-      </Modal>
+        {links}
+      </nav>
+      <NavMobButton handler={setOpenNavMenu} />
+
+      {openNavMenu ? (
+        <NavMobLinks handler={setOpenNavMenu} open={openNavMenu}>
+          <div className={styles.mob_navigation}>{links}</div>
+        </NavMobLinks>
+      ) : null}
     </>
   );
 };
