@@ -1,8 +1,13 @@
 import { useContext, createContext } from 'react';
+// Types
+import { ProjectType } from '@Types';
 
 type State = {
-  modal: { active: boolean; data?: {} | null };
-  openModal: (active: { active: boolean; data?: {} | null }) => void;
+  modal: { active: boolean; data?: ProjectType<string> | null };
+  openModal: (active: {
+    active: boolean;
+    data?: ProjectType<string> | null;
+  }) => void;
 };
 const state: State = {
   modal: { active: false },

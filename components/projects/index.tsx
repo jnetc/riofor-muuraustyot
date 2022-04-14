@@ -73,7 +73,9 @@ const Projects = () => {
       <h3 className={styles.title}>
         {context.finished[language]} {finished.length}
       </h3>
-      <div className={styles.blocks}>{outprocess}</div>
+      <div className={styles.blocks} onClick={openDetails}>
+        {outprocess}
+      </div>
       {outprocess.length > 3 && (
         <button className="button fill extend" onClick={toggleHandler}>
           {context.button[language]}

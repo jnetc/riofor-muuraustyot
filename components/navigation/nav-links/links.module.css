@@ -5,37 +5,6 @@
   margin-inline-start: auto;
   align-items: center;
 }
-.mobile_navigation {
-  width: 100vw;
-  height: 100vh;
-  display: none;
-  justify-content: center;
-  position: fixed;
-  inset: 0;
-  background-color: var(--bg);
-  z-index: 9999;
-}
-.mobile_navigation.open {
-  display: flex;
-}
-
-.mobile_navigation :global(.close-btn) {
-  width: 2rem;
-  height: 2rem;
-  position: absolute;
-  top: 1rem;
-  right: 2rem;
-  z-index: 999;
-}
-.mobile_navigation :global(.close-btn svg) {
-  width: 13px;
-  height: 13px;
-  fill: none;
-  transform: scale(1.5);
-}
-.mobile_navigation :global(.close-btn svg path) {
-  stroke: var(--primary-color);
-}
 
 .mob_navigation {
   display: flex;

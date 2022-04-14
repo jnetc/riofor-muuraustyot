@@ -1,7 +1,5 @@
 import { FC, ReactChild, Dispatch, SetStateAction, MouseEvent } from 'react';
 
-import styles from './links.module.css';
-
 interface Props {
   children: ReactChild;
   open: boolean;
@@ -18,7 +16,7 @@ export const NavMobLinks: FC<Props> = ({ children, open, handler }) => {
   return (
     <nav
       aria-labelledby="smartphone navigation"
-      className={`${styles.mobile_navigation} ${open && styles.open}`}
+      className={`modal ${open && 'open'}`}
       onClick={clickOnLink}
     >
       <button

@@ -117,3 +117,35 @@
   grid-template-columns: max-content 30px;
   justify-items: flex-end;
 }
+
+/* Modal base */
+.modal {
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+  background-color: var(--bg);
+  z-index: 9999;
+}
+.modal.open {
+  display: flex;
+}
+.modal .close-btn {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  z-index: 999;
+}
+.modal .close-btn svg {
+  width: 13px;
+  height: 13px;
+  fill: none;
+  transform: scale(1.5);
+}
+.modal .close-btn svg path {
+  stroke: var(--primary-color);
+}

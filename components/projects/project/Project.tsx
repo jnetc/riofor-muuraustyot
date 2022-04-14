@@ -1,7 +1,6 @@
 import { FC } from 'react';
 // Components
 import { CompleteIcons } from './CompleteIcon';
-import { Details } from './Details';
 // styles
 import styles from './project.module.css';
 // Types
@@ -14,8 +13,6 @@ export const Project: FC<{ data: ProjectType<string> }> = ({ data }) => {
   const { language } = useStore();
   const { openModal } = useModal();
   const modalHandler = () => openModal({ active: true, data });
-
-  // console.log(data.id, data.projectNumber);
 
   return (
     <>
@@ -61,7 +58,6 @@ export const Project: FC<{ data: ProjectType<string> }> = ({ data }) => {
         )}
         {/* <Image image={data?.image} alt={data?.name} modal={false} /> */}
       </section>
-      {/* <Details data={data} /> */}
     </>
   );
 };
