@@ -1,7 +1,6 @@
 .module {
   width: clamp(200px, 50vw, 650px);
-  height: 663px;
-  /* height: clamp(200px, 50vw, 663px); */
+  height: clamp(200px, 50vw, 663px);
   position: relative;
   margin-inline: auto;
 }
