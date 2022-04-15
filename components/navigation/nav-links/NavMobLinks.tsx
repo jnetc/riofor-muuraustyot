@@ -14,9 +14,9 @@ export const NavMobLinks: FC<Props> = ({ children, open, handler }) => {
   };
 
   return (
-    <nav
-      aria-labelledby="smartphone navigation"
-      className={`modal ${open && 'open'}`}
+    <dialog
+      className="modal modal-navigation"
+      open={open}
       onClick={clickOnLink}
     >
       <button
@@ -35,6 +35,6 @@ export const NavMobLinks: FC<Props> = ({ children, open, handler }) => {
         </svg>
       </button>
       {children}
-    </nav>
+    </dialog>
   );
 };

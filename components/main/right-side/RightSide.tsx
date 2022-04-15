@@ -11,6 +11,7 @@ export const RightSide = () => {
         layout="fill"
         priority
       />
+      <span className={styles.svg} />
     </div>
   );
 };

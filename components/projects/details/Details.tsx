@@ -1,10 +1,6 @@
-// import { FC } from 'react';
+import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import Image from 'next/image';
-// Types
-// import { ProjectType } from '@Types';
-// Component
-// import Modal from '@Components/modal/Modal';
 
 import { useModal } from '@Hooks/useModal';
 import styles from './details.module.css';
@@ -14,15 +10,20 @@ export const Details = () => {
     modal: { data, active },
     openModal,
   } = useModal();
-  const closeDetails = () => {
-    openModal({ active: false, data: null });
-  };
 
-  if (!data) return null;
+  const closeDetails = () => openModal({ active: false, data: null });
 
-  return active
+  useEffect(() => {
+    if (active) {
+      document.body.style.overflow = 'hidden';
+      return;
+    }
+    document.body.removeAttribute('style');
+  }, [active]);
+
+  return active && data
     ? createPortal(
-        <dialog className={`modal ${active && 'open'}`}>
+        <dialog className={`modal ${styles.module}`} open={active}>
           <button
             type="button"
             className="close-btn"
@@ -38,18 +39,18 @@ export const Details = () => {
               />
             </svg>
           </button>
-          <section className={styles.module}>
+          <section className={styles.details}>
             <div className={styles.poster}>
               <Image
                 src={data.projectImage.url}
                 alt={data.projectName}
                 layout="fill"
-                objectFit="contain"
+                objectFit="cover"
               />
             </div>
             <a
               href={data.cloudLink}
-              className={`btn fill ${!data.cloudLink ?? 'disable'}`}
+              className={`button fill ${!data.cloudLink ?? 'disable'}`}
               target="_blank"
               rel="noreferrer"
             >
@@ -57,35 +58,35 @@ export const Details = () => {
             </a>
             <a
               href={data.googleMap}
-              className={`btn fill ${!data.googleMap ?? 'disable'}`}
+              className={`button fill ${!data.googleMap ?? 'disable'}`}
               target="_blank"
               rel="noreferrer"
             >
               Osoite kartalla
             </a>
-            <article id="modal-data">
-              <div className="modal-block left">
-                <h3>Projektin tiedot</h3>
+            <article className={styles.information}>
+              <div className={`${styles.info_block} ${styles.left}`}>
+                <h3 className={styles.info_title}>Projektin tiedot</h3>
                 <p className="strong">Projektin numero</p>
-                <p>{data.projectNumber}</p>
+                <p className="paragraph">{data.projectNumber}</p>
                 <p className="strong">Projektin nimi</p>
-                <p>{data.projectName}</p>
+                <p className="paragraph">{data.projectName}</p>
                 <p className="strong">Valmistumisvuosi</p>
-                <p>{data.releaseDate}</p>
+                <p className="paragraph">{data.releaseDate}</p>
                 <p className="strong">Urakoitsija</p>
-                <p>{data.contractor}</p>
+                <p className="paragraph">{data.contractor}</p>
                 <p className="strong">Osoite</p>
-                <p>{data.address}</p>
+                <p className="paragraph">{data.address}</p>
                 <p className="strong">Työn tyyppi</p>
-                <p>{data.jobType}</p>
+                <p className="paragraph">{data.jobType}</p>
                 <p className="strong">Pinta-ala</p>
-                <p>
+                <p className="paragraph">
                   {data.area} m<sup>2</sup>
                 </p>
               </div>
-              <div className="modal-block right">
-                <h3>Lisää tiedot</h3>
-                <p id="modal-block_desc" className="rich-txt">
+              <div className={`${styles.info_block} ${styles.right}`}>
+                <h3 className={styles.info_title}>Lisää tiedot</h3>
+                <p className={`${styles.description} paragraph`}>
                   {data.projectDescription}
                 </p>
               </div>

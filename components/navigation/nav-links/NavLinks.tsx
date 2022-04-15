@@ -40,7 +40,12 @@ export const NavLinks = () => {
 
       {openNavMenu ? (
         <NavMobLinks handler={setOpenNavMenu} open={openNavMenu}>
-          <div className={styles.mob_navigation}>{links}</div>
+          <nav
+            aria-labelledby="smartphone navigation"
+            className={styles.mob_navigation}
+          >
+            {links}
+          </nav>
         </NavMobLinks>
       ) : null}
     </>
