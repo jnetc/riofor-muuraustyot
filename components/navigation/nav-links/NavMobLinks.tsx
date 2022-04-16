@@ -6,6 +6,8 @@ interface Props {
   handler: Dispatch<SetStateAction<boolean>>;
 }
 
+import { CloseButton } from '@Components/close-button/CloseButton';
+
 export const NavMobLinks: FC<Props> = ({ children, open, handler }) => {
   const clickOnLink = (event: MouseEvent<HTMLElement>) => {
     const el = event.target as HTMLElement;
@@ -13,27 +15,15 @@ export const NavMobLinks: FC<Props> = ({ children, open, handler }) => {
     handler(false);
   };
 
+  const close = () => handler(false);
+
   return (
     <dialog
       className="modal modal-navigation"
       open={open}
       onClick={clickOnLink}
     >
-      <button
-        type="button"
-        className="close-btn"
-        aria-label="close menu button"
-        onClick={() => handler(false)}
-      >
-        <svg viewBox="0 0 13 13">
-          <path
-            d="M11.2437 11.5905L1.24365 1.59048M11.2437 1.59045L1.24371 11.5905"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </button>
+      <CloseButton handler={close} />
       {children}
     </dialog>
   );

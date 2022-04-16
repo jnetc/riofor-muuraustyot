@@ -62,21 +62,33 @@ export const Project: FC<{ data: ProjectType<string> }> = ({ data }) => {
   );
 };
 
-const labels = {
+export const labels = {
+  number: {
+    fi: 'Numero',
+    ru: 'Номер',
+  },
+  name: {
+    fi: 'Projektin nimi',
+    ru: 'Название',
+  },
   date: {
-    fi: 'Valmistumisvuosi',
-    ru: 'Сдача проекта',
+    fi: 'Valmistuminen',
+    ru: 'Срок сдачи',
   },
   contractor: {
     fi: 'Urakoitsija',
     ru: 'Подрядчик',
   },
-  name: {
-    fi: 'Projektin nimi',
-    ru: 'название проекта',
-  },
   address: {
     fi: 'Osoite',
     ru: 'Адрес',
+  },
+  jobtype: {
+    fi: 'Työn tyyppi',
+    ru: 'Тип работ',
+  },
+  area: {
+    fi: 'Pinta-ala',
+    ru: 'Объём работ',
   },
 };

@@ -76,7 +76,8 @@ const data = {
       {
         area: '8200',
         address: 'Hansakartano 4, 02780 Espoo',
-        cloudLink: 'http://localhost:8000/#yhteystiedot',
+        cloudLink:
+          'https://drive.google.com/drive/folders/1q2sX5fWtPmIcd0ZspAJVUs6dZV7573Nd?usp=sharing',
         completed: true,
         contractor: 'YIT-yhtyma',
         googleMap: 'https://goo.gl/maps/aJYE9r3dup1vdqDf6',
@@ -94,7 +95,8 @@ const data = {
       {
         area: '5000',
         address: 'Vanha-nurmikkontie 8, Vantaa',
-        cloudLink: 'https://www.google.com/',
+        cloudLink:
+          'https://drive.google.com/drive/folders/1q2sX5fWtPmIcd0ZspAJVUs6dZV7573Nd?usp=sharing',
         completed: false,
         contractor: 'SRV Yhtiot',
         googleMap: 'https://goo.gl/maps/AHdK3LDaayYDJNcg6',
@@ -112,7 +114,8 @@ const data = {
       {
         area: '12-78800',
         address: 'Hansakartano 4, 02780 Espoo',
-        cloudLink: 'http://localhost:8000/#yhteystiedot',
+        cloudLink:
+          'https://drive.google.com/drive/folders/1q2sX5fWtPmIcd0ZspAJVUs6dZV7573Nd?usp=sharing',
         completed: true,
         contractor: 'YIT-yhtyma',
         googleMap: 'https://goo.gl/maps/aJYE9r3dup1vdqDf6',
@@ -166,7 +169,8 @@ const data = {
       {
         area: '145057',
         address: 'Vanha-nurmikkontie 8, Vantaa',
-        cloudLink: 'https://www.google.com/',
+        cloudLink:
+          'https://drive.google.com/drive/folders/1KuQVWT3B7f4s-npnmUoZZ5AGPa4V6_a9?usp=sharing',
         completed: false,
         contractor: 'SRV Yhtiot',
         googleMap: 'https://goo.gl/maps/AHdK3LDaayYDJNcg6',

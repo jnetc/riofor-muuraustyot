@@ -170,7 +170,6 @@
 
 @media screen and (max-width: 960px) {
   .modal .close-btn {
-    --alpha: #ffffff80;
     border-radius: 0.5rem;
     background-color: var(--close-btn-bg);
   }

@@ -27,7 +27,7 @@
 }
 .info_block {
   display: grid;
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: 45px;
   gap: 0.6rem;
 }
@@ -42,9 +42,23 @@
   font-size: 1.5rem;
   color: var(--primary-color);
 }
+.line {
+  position: relative;
+  padding-inline-start: 9rem;
+}
+.line sup {
+  position: absolute;
+}
+.line::after {
+  content: attr(data-label);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--label);
+  /* font-weight: bold; */
+}
 
 .description {
-  grid-column: 1 /-1;
   grid-row: 2 / -1;
 }
 

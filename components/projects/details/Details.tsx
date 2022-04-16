@@ -3,15 +3,21 @@ import { createPortal } from 'react-dom';
 import Image from 'next/image';
 
 import { useModal } from '@Hooks/useModal';
+import { useStore } from '@Hooks/useStore';
+
 import styles from './details.module.css';
 
+import { CloseButton } from '@Components/close-button/CloseButton';
+import { labels } from '../project/Project';
+
 export const Details = () => {
+  const { language } = useStore();
   const {
     modal: { data, active },
     openModal,
   } = useModal();
 
-  const closeDetails = () => openModal({ active: false, data: null });
+  const close = () => openModal({ active: false, data: null });
 
   useEffect(() => {
     if (active) {
@@ -24,21 +30,7 @@ export const Details = () => {
   return active && data
     ? createPortal(
         <dialog className={`modal ${styles.module}`} open={active}>
-          <button
-            type="button"
-            className="close-btn"
-            aria-label="close menu button"
-            onClick={closeDetails}
-          >
-            <svg viewBox="0 0 13 13">
-              <path
-                d="M11.2437 11.5905L1.24365 1.59048M11.2437 1.59045L1.24371 11.5905"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
+          <CloseButton handler={close} />
           <section className={styles.details}>
             <div className={styles.poster}>
               <Image
@@ -66,26 +58,54 @@ export const Details = () => {
             </a>
             <article className={styles.information}>
               <div className={`${styles.info_block} ${styles.left}`}>
-                <h3 className={styles.info_title}>Projektin tiedot</h3>
-                <p className="strong">Projektin numero</p>
-                <p className="paragraph">{data.projectNumber}</p>
-                <p className="strong">Projektin nimi</p>
-                <p className="paragraph">{data.projectName}</p>
-                <p className="strong">Valmistumisvuosi</p>
-                <p className="paragraph">{data.releaseDate}</p>
-                <p className="strong">Urakoitsija</p>
-                <p className="paragraph">{data.contractor}</p>
-                <p className="strong">Osoite</p>
-                <p className="paragraph">{data.address}</p>
-                <p className="strong">Työn tyyppi</p>
-                <p className="paragraph">{data.jobType}</p>
-                <p className="strong">Pinta-ala</p>
-                <p className="paragraph">
+                <h3 className={styles.info_title}>
+                  {titles.project[language]}
+                </h3>
+                <p
+                  className={`paragraph ${styles.line}`}
+                  data-label={labels.number[language]}
+                >
+                  {data.projectNumber}
+                </p>
+                <p
+                  className={`paragraph ${styles.line}`}
+                  data-label={labels.name[language]}
+                >
+                  {data.projectName}
+                </p>
+                <p
+                  className={`paragraph ${styles.line}`}
+                  data-label={labels.date[language]}
+                >
+                  {data.releaseDate}
+                </p>
+                <p
+                  className={`paragraph ${styles.line}`}
+                  data-label={labels.contractor[language]}
+                >
+                  {data.contractor}
+                </p>
+                <p
+                  className={`paragraph ${styles.line}`}
+                  data-label={labels.address[language]}
+                >
+                  {data.address}
+                </p>
+                <p
+                  className={`paragraph ${styles.line}`}
+                  data-label={labels.jobtype[language]}
+                >
+                  {data.jobType}
+                </p>
+                <p
+                  className={`paragraph ${styles.line}`}
+                  data-label={labels.area[language]}
+                >
                   {data.area} m<sup>2</sup>
                 </p>
               </div>
               <div className={`${styles.info_block} ${styles.right}`}>
-                <h3 className={styles.info_title}>Lisää tiedot</h3>
+                <h3 className={styles.info_title}>{titles.desc[language]}</h3>
                 <p className={`${styles.description} paragraph`}>
                   {data.projectDescription}
                 </p>
@@ -96,4 +116,15 @@ export const Details = () => {
         document.getElementById('portal-project') as HTMLElement
       )
     : null;
+};
+
+const titles = {
+  project: {
+    fi: 'Projektin tiedot',
+    ru: 'Информация проекта',
+  },
+  desc: {
+    fi: 'Lisää tiedot',
+    ru: 'Дополнительно',
+  },
 };
