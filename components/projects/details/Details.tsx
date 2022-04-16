@@ -8,9 +8,8 @@ import { useStore } from '@Hooks/useStore';
 import styles from './details.module.css';
 // Component
 import { CloseButton } from '@Components/close-button/CloseButton';
-import { labels } from '../project/Project';
-// Icons
-import { Icons } from '@Components/icons/Icons';
+// Lang
+import { project_labels, project_titles } from '@Lang';
 
 export const Details = () => {
   const { language } = useStore();
@@ -49,7 +48,6 @@ export const Details = () => {
               rel="noreferrer"
             >
               Kuvat pilvissa
-              <Icons icon="cloud" />
             </a>
             <a
               href={data.googleMap}
@@ -58,58 +56,59 @@ export const Details = () => {
               rel="noreferrer"
             >
               Osoite kartalla
-              <Icons icon="location" />
             </a>
             <article className={styles.information}>
               <div className={`${styles.info_block} ${styles.left}`}>
                 <h3 className={styles.info_title}>
-                  {titles.project[language]}
+                  {project_titles.project[language]}
                 </h3>
                 <p
                   className={`paragraph ${styles.line}`}
-                  data-label={labels.number[language]}
+                  data-label={project_labels.number[language]}
                 >
                   {data.projectNumber}
                 </p>
                 <p
                   className={`paragraph ${styles.line}`}
-                  data-label={labels.name[language]}
+                  data-label={project_labels.name[language]}
                 >
                   {data.projectName}
                 </p>
                 <p
                   className={`paragraph ${styles.line}`}
-                  data-label={labels.date[language]}
+                  data-label={project_labels.date[language]}
                 >
                   {data.releaseDate}
                 </p>
                 <p
                   className={`paragraph ${styles.line}`}
-                  data-label={labels.contractor[language]}
+                  data-label={project_labels.contractor[language]}
                 >
                   {data.contractor}
                 </p>
                 <p
                   className={`paragraph ${styles.line}`}
-                  data-label={labels.address[language]}
+                  data-label={project_labels.address[language]}
                 >
                   {data.address}
                 </p>
                 <p
                   className={`paragraph ${styles.line}`}
-                  data-label={labels.jobtype[language]}
+                  data-label={project_labels.jobtype[language]}
                 >
                   {data.jobType}
                 </p>
                 <p
                   className={`paragraph ${styles.line}`}
-                  data-label={labels.area[language]}
+                  data-label={project_labels.area[language]}
                 >
                   {data.area} m<sup>2</sup>
                 </p>
               </div>
               <div className={`${styles.info_block} ${styles.right}`}>
-                <h3 className={styles.info_title}>{titles.desc[language]}</h3>
+                <h3 className={styles.info_title}>
+                  {project_titles.desc[language]}
+                </h3>
                 <p className={`${styles.description} paragraph`}>
                   {data.projectDescription}
                 </p>
@@ -120,15 +119,4 @@ export const Details = () => {
         document.getElementById('portal-project') as HTMLElement
       )
     : null;
-};
-
-const titles = {
-  project: {
-    fi: 'Projektin tiedot',
-    ru: 'Информация проекта',
-  },
-  desc: {
-    fi: 'Lisää tiedot',
-    ru: 'Дополнительно',
-  },
 };

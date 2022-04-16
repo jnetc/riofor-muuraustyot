@@ -3,6 +3,8 @@ import { useStore } from '@Hooks/useStore';
 import { Icons } from '@Components/icons/Icons';
 // Styles
 import styles from './leftside.module.css';
+// Lang
+import { buttons_main } from '@Lang';
 
 export const LeftSide = () => {
   const { data, language } = useStore();
@@ -11,26 +13,15 @@ export const LeftSide = () => {
       <h1 className="main-title">{data?.home.title}</h1>
       <p className="description-main">{data?.home.description}</p>
 
-      <button className="button fill fit">
-        {buttons.offer[language]}
+      <button className="button-with-icon fill fit">
+        {buttons_main.offer[language]}
         <Icons icon="paperplain" />
       </button>
 
-      <a href="#projects" className="button line fit">
-        {buttons.projects[language]}
+      <a href="#projects" className="button-with-icon line fit">
+        {buttons_main.projects[language]}
         <Icons icon="projects" />
       </a>
     </div>
   );
-};
-
-const buttons = {
-  offer: {
-    fi: 'Ota yhteyttä',
-    ru: 'Связаться',
-  },
-  projects: {
-    fi: 'Projektit',
-    ru: 'Проекты',
-  },
 };

@@ -5,14 +5,16 @@ import { useStore } from '@Hooks/useStore';
 // Components
 import { NavMobButton } from './NavMobButton';
 import { NavMobLinks } from './NavMobLinks';
-
+// Style
 import styles from './links.module.css';
+// Lang
+import { nav_urls } from '@Lang';
 
 export const NavLinks = () => {
   const { language } = useStore();
   const [openNavMenu, setOpenNavMenu] = useState(false);
 
-  const links = urls.map(link => {
+  const links = nav_urls.map(link => {
     return (
       <NavLink key={link.anchor} url={link.anchor}>
         {link[language]}
@@ -51,26 +53,3 @@ export const NavLinks = () => {
     </>
   );
 };
-
-const urls = [
-  {
-    fi: 'Etusivu',
-    ru: 'Начальная',
-    anchor: '#home',
-  },
-  {
-    fi: 'Projektit',
-    ru: 'Проекты',
-    anchor: '#projects',
-  },
-  {
-    fi: 'Palvelut',
-    ru: 'Услуги',
-    anchor: '#services',
-  },
-  {
-    fi: 'Meista',
-    ru: 'О нас',
-    anchor: '#about',
-  },
-];

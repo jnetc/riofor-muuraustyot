@@ -24,6 +24,7 @@
       "@Components/*": ["./components/*"],
       "@Hooks/*": ["./hooks/*"],
       "@Helpers/*": ["./helpers/*"],
+      "@Lang": ["./lang/languages.ts"],
       "@Store/*": ["./store/*"],
       "@Styles/*": ["./styles/*"],
       "@Types": ["types"]

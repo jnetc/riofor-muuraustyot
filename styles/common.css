@@ -57,11 +57,10 @@
   margin-inline: auto;
   text-align: center;
 }
-
-.button {
+/* buttons styles*/
+.button,
+.button-with-icon {
   display: grid;
-  grid-template-columns: max-content max-content;
-  column-gap: 0.8rem;
   align-items: center;
   justify-content: center;
   padding-block: clamp(0.9rem, 2vw, 1rem);
@@ -81,34 +80,45 @@
   cursor: pointer;
   z-index: 5;
 }
-.button.fit {
+.button-with-icon {
+  grid-template-columns: max-content max-content;
+  column-gap: 0.8rem;
+}
+.button.fit,
+.button-with-icon.fit {
   width: fit-content;
 }
-.button.extend {
+.button.extend,
+.button-with-icon.extend {
   width: 100%;
 }
-.button:where(.fill, .line, .disable) {
+.button:where(.fill, .line, .disable),
+.button-with-icon:where(.fill, .line, .disable) {
   padding-inline: clamp(1rem, 2vw, 2rem);
 }
-.button.fill {
+.button.fill,
+.button-with-icon.fill {
   color: var(--btn-txt-fill);
   background: var(--btn-fill);
   box-shadow: 0 10px 15px var(--btn-fill-shadow-darken),
     0 30px 30px var(--btn-fill-shadow-lighten);
 }
-.button.fill:hover {
+.button.fill:hover,
+.button-with-icon.fill:hover {
   background: var(--primary-color);
   box-shadow: none;
 }
 .button.fill svg {
   fill: var(--btn-txt-fill);
 }
-.button.line {
+.button.line,
+.button-with-icon.line {
   color: var(--btn-txt-line);
   border-color: 11px;
   border: 2px solid var(--btn-txt-line);
 }
-.button.line:hover {
+.button.line:hover,
+.button-with-icon.line:hover {
   border-color: var(--secondary-color);
   box-shadow: none;
 }
@@ -116,25 +126,25 @@
   grid-template-columns: max-content 30px;
   justify-items: flex-end;
 }
-.button.disable {
+.button.disable,
+.button-with-icon.disable {
   background-color: var(--btn-disable);
   color: var(--btn-txt-disable);
 }
-.button-icon {
+.btn-icon {
   grid-column: 2;
   position: relative;
 }
-.button-icon.normal {
+.btn-icon.normal {
   width: clamp(0.8rem, 2vw, 1.2rem);
   height: clamp(0.8rem, 2vw, 1.2rem);
 }
-.button-icon.wide {
+.btn-icon.wide {
   width: clamp(0.8rem, 2vw, 1.2rem);
   width: clamp(1.1rem, 2vw, 1.5rem);
 }
-.button-icon.narrow {
-  top: -2px;
-  transform: scale(0.95);
+.btn-icon .switch-fill {
+  fill: var(--primary-color);
 }
 
 /* Modal base */

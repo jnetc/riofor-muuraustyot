@@ -8,7 +8,8 @@ import { Project } from './project/Project';
 import { compare } from '@Helpers/functions';
 // Styles
 import styles from './projects.module.css';
-import { Icons } from '@Components/icons/Icons';
+// Lang
+import { projects } from '@Lang';
 
 const Projects = () => {
   const { data, language } = useStore();
@@ -19,7 +20,7 @@ const Projects = () => {
   if (!data?.project) {
     return (
       <section id="projects">
-        <h2 className="section-title">{context.error[language]}</h2>
+        <h2 className="section-title">{projects.error[language]}</h2>
       </section>
     );
   }
@@ -64,15 +65,15 @@ const Projects = () => {
 
   return (
     <section id="projects">
-      <h2 className="section-title">{context.title[language]}</h2>
+      <h2 className="section-title">{projects.title[language]}</h2>
       <h3 className={styles.title}>
-        {context.active[language]} {active.length}
+        {projects.active[language]} {active.length}
       </h3>
       <div className={styles.blocks} onClick={openDetails}>
         {inprocess}
       </div>
       <h3 className={styles.title} id="finished">
-        {context.finished[language]} {finished.length}
+        {projects.finished[language]} {finished.length}
       </h3>
       <div className={styles.blocks} onClick={openDetails}>
         {outprocess}
@@ -83,8 +84,7 @@ const Projects = () => {
           className="button fill extend"
           onClick={toggleHandler}
         >
-          {toggle ? context.hide[language] : context.show[language]}
-          {toggle ? <Icons icon="up" /> : <Icons icon="down" />}
+          {toggle ? projects.hide[language] : projects.show[language]}
         </a>
       )}
     </section>
@@ -92,30 +92,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
-const context = {
-  title: {
-    fi: 'projektit',
-    ru: 'проекты',
-  },
-  active: {
-    fi: 'Käynnissä olevat projektit',
-    ru: 'Текущие проекты',
-  },
-  finished: {
-    fi: 'Valmistuneet projektit',
-    ru: 'Завершенные проекты',
-  },
-  show: {
-    fi: 'Näytä kaikki',
-    ru: 'Показать все',
-  },
-  hide: {
-    fi: 'Piilottaa',
-    ru: 'Свернуть',
-  },
-  error: {
-    fi: 'Ei ole projektia',
-    ru: 'Нет проектов',
-  },
-};

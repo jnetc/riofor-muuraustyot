@@ -8,6 +8,8 @@ import { ProjectType } from '@Types';
 // Hook
 import { useStore } from '@Hooks/useStore';
 import { useModal } from '@Hooks/useModal';
+// Lang
+import { project_labels } from '@Lang';
 
 export const Project: FC<{ data: ProjectType<string> }> = ({ data }) => {
   const { language } = useStore();
@@ -33,21 +35,21 @@ export const Project: FC<{ data: ProjectType<string> }> = ({ data }) => {
           {data.completed && <CompleteIcons />}
         </span>
 
-        <div className={styles.date} data-label={labels.date[language]}>
+        <div className={styles.date} data-label={project_labels.date[language]}>
           {data.releaseDate}
         </div>
         <div
           className={styles.contractor}
-          data-label={labels.contractor[language]}
+          data-label={project_labels.contractor[language]}
         >
           {data.contractor}
         </div>
-        <div className={styles.name} data-label={labels.name[language]}>
+        <div className={styles.name} data-label={project_labels.name[language]}>
           {data.projectName}
         </div>
         <address
           className={styles.address}
-          data-label={labels.address[language]}
+          data-label={project_labels.address[language]}
         >
           {data.address}
         </address>
@@ -60,35 +62,4 @@ export const Project: FC<{ data: ProjectType<string> }> = ({ data }) => {
       </section>
     </>
   );
-};
-
-export const labels = {
-  number: {
-    fi: 'Numero',
-    ru: 'Номер',
-  },
-  name: {
-    fi: 'Projektin nimi',
-    ru: 'Название',
-  },
-  date: {
-    fi: 'Valmistuminen',
-    ru: 'Срок сдачи',
-  },
-  contractor: {
-    fi: 'Urakoitsija',
-    ru: 'Подрядчик',
-  },
-  address: {
-    fi: 'Osoite',
-    ru: 'Адрес',
-  },
-  jobtype: {
-    fi: 'Työn tyyppi',
-    ru: 'Тип работ',
-  },
-  area: {
-    fi: 'Pinta-ala',
-    ru: 'Объём работ',
-  },
 };
