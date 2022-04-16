@@ -74,6 +74,7 @@ html[data-theme='dark'] {
   padding: 0;
   box-sizing: border-box;
   text-size-adjust: none;
+  line-height: 1;
 }
 html {
   transition: all 0.2s ease-in-out;

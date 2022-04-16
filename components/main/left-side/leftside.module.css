@@ -9,7 +9,7 @@
 .module :local(p) {
   grid-column: 1 / -1;
 }
-.module :local(a) {
+.module :local(a, button) {
   grid-row: 5;
 }
 

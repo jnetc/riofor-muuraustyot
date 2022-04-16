@@ -8,6 +8,7 @@ import { Project } from './project/Project';
 import { compare } from '@Helpers/functions';
 // Styles
 import styles from './projects.module.css';
+import { Icons } from '@Components/icons/Icons';
 
 const Projects = () => {
   const { data, language } = useStore();
@@ -70,16 +71,21 @@ const Projects = () => {
       <div className={styles.blocks} onClick={openDetails}>
         {inprocess}
       </div>
-      <h3 className={styles.title}>
+      <h3 className={styles.title} id="finished">
         {context.finished[language]} {finished.length}
       </h3>
       <div className={styles.blocks} onClick={openDetails}>
         {outprocess}
       </div>
       {outprocess.length > 3 && (
-        <button className="button fill extend" onClick={toggleHandler}>
-          {context.button[language]}
-        </button>
+        <a
+          href="#finished"
+          className="button fill extend"
+          onClick={toggleHandler}
+        >
+          {toggle ? context.hide[language] : context.show[language]}
+          {toggle ? <Icons icon="up" /> : <Icons icon="down" />}
+        </a>
       )}
     </section>
   );
@@ -100,9 +106,13 @@ const context = {
     fi: 'Valmistuneet projektit',
     ru: 'Завершенные проекты',
   },
-  button: {
+  show: {
     fi: 'Näytä kaikki',
     ru: 'Показать все',
+  },
+  hide: {
+    fi: 'Piilottaa',
+    ru: 'Свернуть',
   },
   error: {
     fi: 'Ei ole projektia',

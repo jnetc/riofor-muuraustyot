@@ -1,7 +1,7 @@
-import Link from 'next/link';
-// Hook
 import { useStore } from '@Hooks/useStore';
-
+// Icon
+import { Icons } from '@Components/icons/Icons';
+// Styles
 import styles from './leftside.module.css';
 
 export const LeftSide = () => {
@@ -10,20 +10,24 @@ export const LeftSide = () => {
     <div className={styles.module}>
       <h1 className="main-title">{data?.home.title}</h1>
       <p className="description-main">{data?.home.description}</p>
-      <Link href="email:apxdemon@gmail.com">
-        <a className="button fill fit">{buttons.offer[language]}</a>
-      </Link>
-      <Link href="#projects">
-        <a className="button line fit">{buttons.projects[language]}</a>
-      </Link>
+
+      <button className="button fill fit">
+        {buttons.offer[language]}
+        <Icons icon="paperplain" />
+      </button>
+
+      <a href="#projects" className="button line fit">
+        {buttons.projects[language]}
+        <Icons icon="projects" />
+      </a>
     </div>
   );
 };
 
 const buttons = {
   offer: {
-    fi: 'Pyydä tarjous',
-    ru: 'Спросить скидку',
+    fi: 'Ota yhteyttä',
+    ru: 'Связаться',
   },
   projects: {
     fi: 'Projektit',

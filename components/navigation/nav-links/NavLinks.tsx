@@ -56,7 +56,7 @@ const urls = [
   {
     fi: 'Etusivu',
     ru: 'Начальная',
-    anchor: '/',
+    anchor: '#home',
   },
   {
     fi: 'Projektit',

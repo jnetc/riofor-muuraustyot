@@ -1,14 +1,16 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import Image from 'next/image';
-
+// Hook
 import { useModal } from '@Hooks/useModal';
 import { useStore } from '@Hooks/useStore';
-
+// style
 import styles from './details.module.css';
-
+// Component
 import { CloseButton } from '@Components/close-button/CloseButton';
 import { labels } from '../project/Project';
+// Icons
+import { Icons } from '@Components/icons/Icons';
 
 export const Details = () => {
   const { language } = useStore();
@@ -47,6 +49,7 @@ export const Details = () => {
               rel="noreferrer"
             >
               Kuvat pilvissa
+              <Icons icon="cloud" />
             </a>
             <a
               href={data.googleMap}
@@ -55,6 +58,7 @@ export const Details = () => {
               rel="noreferrer"
             >
               Osoite kartalla
+              <Icons icon="location" />
             </a>
             <article className={styles.information}>
               <div className={`${styles.info_block} ${styles.left}`}>
