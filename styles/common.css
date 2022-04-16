@@ -68,17 +68,18 @@
   position: relative;
   overflow: hidden;
   background: transparent;
+  border-radius: clamp(4px, 2vw, 10px);
   font-size: clamp(0.9rem, 2vw, 1.4rem);
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.3px;
-  border-radius: clamp(4px, 2vw, 10px);
+  line-height: 15px;
+  white-space: nowrap;
   border: 2px solid transparent;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
   z-index: 5;
-  white-space: nowrap;
 }
 .button.fit {
   width: fit-content;
@@ -132,9 +133,8 @@
   width: clamp(1.1rem, 2vw, 1.5rem);
 }
 .button-icon.narrow {
-  aspect-ratio: 1 / 1;
-  height: 0.7rem;
-  top: -7px;
+  top: -2px;
+  transform: scale(0.95);
 }
 
 /* Modal base */
