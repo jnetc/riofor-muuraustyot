@@ -251,4 +251,9 @@ const data = {
       },
     ],
   },
+  about: {
+    title: 'Rakennamme taloja, joissa haluat elää',
+    description:
+      'Yhtiö on toimiensa aikana vaikuttanut merkittävästi nykyaikaisen pääkaupunkiseudun arkkitehtonisen ulkonäön muodostumiseen. Riofor Muuraustyöt Oy tarjoaa monien vuosien kokemuksensa, kertyneen tietämyksen ja nykyaikaisen teknologian soveltamisen ansiosta edullisimmat tarjoukset erilaisen monimutkaisuuden tiilitehtaiden alalla. \n\nTakaamme parhaan työn laadun, noudattamisen rakennusmääräykset ja -säännöt, rakentamisen aloittamisen vähimmäisaika ja työsuhteen ja sopimuksen mukaisten velvoitteiden määräaikojen tiukka noudattaminen. Kaikki muuraustyöt suoritetaan ammattitaitoisella henkilökunnalla, jolla on ammattitaso ja työkokemus.',
+  },
 };

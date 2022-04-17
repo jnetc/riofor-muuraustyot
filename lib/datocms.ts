@@ -44,6 +44,9 @@ export const query = gql`
     service(locale: $locale) {
       ...ServiceRecordFragment
     }
+    about(locale: $locale) {
+      ...AboutRecordFragment
+    }
   }
 
   fragment HomeRecordFragment on HomeRecord {
@@ -81,5 +84,10 @@ export const query = gql`
       cardTitle
       cardDescription
     }
+  }
+
+  fragment AboutRecordFragment on AboutRecord {
+    title
+    description
   }
 `;

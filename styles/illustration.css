@@ -1,27 +1,38 @@
-.module {
+.illustration {
   width: clamp(200px, 50vw, 650px);
   height: clamp(200px, 50vw, 663px);
   position: relative;
   margin-inline: auto;
 }
-.module img {
+.illustration img {
   animation: illustration 10s infinite;
 }
-.module span {
+.illustration span {
   overflow: unset !important;
 }
 
-.svg {
-  width: 60%;
-  aspect-ratio: 1.1 / 1;
+/* illustrations */
+.riofor,
+.houses {
   position: absolute;
-  bottom: 10px;
-  left: 50%;
   background-color: var(--svg);
   opacity: 0.5;
   animation: shadow 10s infinite;
   box-shadow: 0 0 50px var(--svg);
   z-index: -1;
+}
+
+.riofor {
+  width: 60%;
+  aspect-ratio: 1.1 / 1;
+  bottom: 10px;
+  left: 50%;
+}
+.houses {
+  width: 65%;
+  aspect-ratio: 1.4 / 1;
+  bottom: 80px;
+  left: 48%;
 }
 
 @keyframes illustration {
@@ -50,9 +61,12 @@
 }
 
 @media screen and (max-width: 960px) {
-  .module {
+  .illustration {
     width: clamp(300px, 60vw, 650px);
     height: clamp(300px, 60vw, 663px);
     order: 1;
+  }
+  .houses {
+    bottom: 40px;
   }
 }

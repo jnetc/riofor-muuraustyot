@@ -47,11 +47,7 @@ export interface ServicesType<T> {
 export interface ServiceType<T> extends ArticleType<T> {
   serviceCard: Array<ServicesType<T>>;
 }
-export interface AboutType<T> extends ArticleType<T> {
-  name: T;
-  proff: T;
-  aboutMe: T;
-}
+export interface AboutType<T> extends ArticleType<T> {}
 
 export interface DataType {
   _site: SEO<string>;

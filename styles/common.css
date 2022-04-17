@@ -1,6 +1,5 @@
 #projects,
-#services,
-#about {
+#services {
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -204,3 +203,5 @@
     background-color: var(--close-btn-bg);
   }
 }
+
+@import url(./illustration.css);
