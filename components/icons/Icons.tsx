@@ -19,7 +19,7 @@ export const Icons: FC<{ icon: IconsProps }> = ({ icon }) => {
     projects: <Projects />,
   };
   return (
-    <div className={`btn-icon normal ${wideIcons.includes(icon) && 'wide'}}`}>
+    <div className={`btn-icon normal ${wideIcons.includes(icon) && 'wide'}`}>
       {icons[icon]}
     </div>
   );

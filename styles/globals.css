@@ -9,62 +9,65 @@
 }
 
 html[data-theme='light'] {
-  --bg: rgb(146, 158, 165);
-  --primary-color: #060d0c;
-  --secondary-color: #c1ced1;
+  --bg: rgb(168, 185, 194);
+  --primary-color: rgb(6, 14, 13);
 
-  --btn-fill: #182825;
-  --btn-txt-fill: #c1ced1;
+  --title: rgb(0, 0, 0);
+  --description: rgb(40, 44, 46);
+
+  --btn-fill: rgb(24, 40, 37);
+  --btn-txt-fill: rgb(193, 206, 209);
   --btn-fill-shadow-darken: rgba(24, 40, 37, 0.3);
   --btn-fill-shadow-lighten: rgba(24, 40, 37, 0.2);
 
-  --btn-line: #182825;
-  --btn-txt-line: #2f383a;
+  --btn-line: rgb(24, 40, 37);
+  --btn-txt-line: rgb(47, 56, 58);
 
-  --btn-disable: #c1ced1;
-  --btn-txt-disable: #5a626d;
+  --btn-disable: rgb(193, 206, 209);
+  --btn-txt-disable: rgb(90, 98, 109);
 
   --close-btn-bg: rgba(146, 158, 165, 0.7);
 
-  --project-active: #c1ced1;
-  --project-finished: #9ca8b0;
-  --project-txt-color: #060d0c;
-  /* --project-active-shadow-darken: rgba(121, 128, 129, 0.2);
-  --project-active-shadow-lighten: rgba(121, 128, 129, 0.1); */
-  /* --project: #182825; */
-  --project-hover: #060d0c;
-  --label: #5a626d;
+  --project-active: rgb(184, 202, 206);
+  --project-finished: rgb(176, 191, 201);
+  --project-txt-color: rgb(6, 13, 12);
+  --project-hover: rgb(6, 13, 12);
+  --label: rgb(90, 98, 109);
 
-  --svg: #535d6b;
+  --svg: rgb(83, 93, 107);
+
+  --btn-fill-shadow-darken: hsla(191, 10%, 60%, 0.3);
+  --btn-fill-shadow-lighten: hsla(191, 10%, 60%, 0.2);
 }
 html[data-theme='dark'] {
-  --bg: #1a1e1e;
-  --primary-color: #a9b8c0;
-  --secondary-color: #c1ced1;
+  --bg: rgb(26, 30, 30);
+  --primary-color: rgb(169, 184, 192);
 
-  --btn-fill: #c1ced1;
-  --btn-txt-fill: #182825;
+  --title: rgb(187, 202, 210);
+  --description: rgb(156, 170, 176);
+
+  --btn-fill: rgb(193, 206, 209);
+  --btn-txt-fill: rgb(24, 40, 37);
   --btn-fill-shadow-darken: rgba(193, 206, 209, 0.2);
   --btn-fill-shadow-lighten: rgba(193, 206, 209, 0.1);
 
-  --btn-line: #929ea5;
-  --btn-txt-line: #929ea5;
+  --btn-line: rgb(146, 158, 165);
+  --btn-txt-line: rgb(146, 158, 165);
 
-  --btn-disable: #182825;
-  --btn-txt-disable: #696969;
+  --btn-disable: rgb(24, 40, 37);
+  --btn-txt-disable: rgb(105, 105, 105);
 
   --close-btn-bg: rgba(24, 40, 37, 0.7);
 
-  --project-active: #25292a;
-  --project-finished: #1e2122;
-  --project-txt-color: #060d0c;
-  /* --project-active-shadow-darken: rgba(193, 206, 209, 0.2);
-  --project-active-shadow-lighten: rgba(193, 206, 209, 0.1); */
-  /* --project: #1b1f1e; */
-  --project-hover: #ccdcdf;
-  --label: #696969;
+  --project-active: rgb(37, 41, 42);
+  --project-finished: rgb(30, 33, 34);
+  --project-txt-color: rgb(6, 13, 12);
+  --project-hover: rgb(204, 220, 223);
+  --label: rgb(105, 105, 105);
+  --svg: rgb(83, 93, 107);
 
-  --svg: #535d6b;
+  --btn-fill-shadow-darken: rgba(0, 0, 0, 0.5);
+  --btn-fill-shadow-lighten: rgba(0, 0, 0, 0.3);
 }
 
 *,
@@ -126,11 +129,6 @@ a,
 li,
 button {
   font-weight: bold;
-}
-
-p,
-span {
-  color: var(--primary-color);
 }
 
 main {

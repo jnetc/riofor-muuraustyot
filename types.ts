@@ -4,6 +4,7 @@ interface ArticleType<T> {
   title: T;
   description: T;
 }
+
 interface SEO<T> {
   globalSeo: {
     fallbackSeo: ArticleType<T>;
@@ -35,11 +36,16 @@ interface ProjectsType<T> {
   projects: Array<ProjectType<T>>;
 }
 
-export interface ServiceType<T> extends ArticleType<T> {
-  iconName: T;
+export type ServiceIconsType = 'building' | 'house' | 'office';
+
+export interface ServicesType<T> {
+  id: T;
+  cardTitle: T;
+  cardDescription: T;
+  icon: ServiceIconsType;
 }
-export interface ServicesType<T> extends ArticleType<T> {
-  service: Array<ServiceType<T>>;
+export interface ServiceType<T> extends ArticleType<T> {
+  serviceCard: Array<ServicesType<T>>;
 }
 export interface AboutType<T> extends ArticleType<T> {
   name: T;
@@ -51,6 +57,6 @@ export interface DataType {
   _site: SEO<string>;
   home: HomeType<string>;
   project: ProjectsType<string>;
-  service: ServicesType<string>;
+  service: ServiceType<string>;
   about: AboutType<string>;
 }

@@ -1,0 +1,19 @@
+.module {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 4rem;
+  margin-block-start: 8rem;
+}
+.service {
+  display: flex;
+  flex-flow: column;
+  gap: 2rem;
+  padding: 4rem 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 25px 25px var(--btn-fill-shadow-darken),
+    0 25px 25px var(--btn-fill-shadow-lighten);
+}
+.service svg {
+  align-self: center;
+  fill: var(--description);
+}

@@ -223,4 +223,32 @@ const data = {
       },
     ],
   },
+  service: {
+    title: 'muuraus palvelut',
+    description:
+      'Riofor työskentelee tälläkin hetkellä erinäisten projektien kimpussa. Alla näet listan kaikista työn alla olevista kohteista. Eri kokoiset ja eri väriset tiilet sekä laastit avaavat mahdollisuuden monimuotoisiin julkisivuihin ja eri ladontakuviot mahdollistavat näyttävätkin yksityiskohdat, joilla voidaan korostaa rakenteellista arkkitehtuuria tai tyylisuuntaa.',
+    serviceCard: [
+      {
+        id: '4502440',
+        cardTitle: 'Julkisivumuuraus',
+        cardDescription:
+          'Tiili on maailman eniten käytetty julkisivujen materiaali. Tiilimuuraus on oikein toteutettuna näyttävä, kestävä ja lähes huoltovapaa ulkoseinärakenne. \n\nMuuratut julkisivut ovat kokonaiskustannuksellisesti koko rakennuksen elinkaaren aikana erittäin kilpailukykyisiä oikein tehtyinä.',
+        icon: 'building',
+      },
+      {
+        id: '4502441',
+        cardTitle: 'Väliseinämuuraukset',
+        cardDescription:
+          'Tiili on maailman eniten käytetty julkisivujen materiaali. Tiilimuuraus on oikein toteutettuna näyttävä, kestävä ja lähes huoltovapaa ulkoseinärakenne. \n\nMuuratut julkisivut ovat kokonaiskustannuksellisesti koko rakennuksen elinkaaren aikana erittäin kilpailukykyisiä oikein tehtyinä.',
+        icon: 'house',
+      },
+      {
+        id: '4502444',
+        cardTitle: 'Korjausmuuraus',
+        cardDescription:
+          'Tiili on maailman eniten käytetty julkisivujen materiaali. Tiilimuuraus on oikein toteutettuna näyttävä, kestävä ja lähes huoltovapaa ulkoseinärakenne. \n\nMuuratut julkisivut ovat kokonaiskustannuksellisesti koko rakennuksen elinkaaren aikana erittäin kilpailukykyisiä oikein tehtyinä.',
+        icon: 'office',
+      },
+    ],
+  },
 };

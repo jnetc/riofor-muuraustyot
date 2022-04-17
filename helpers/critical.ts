@@ -16,7 +16,7 @@ export const extraCSS = `
     color: #9caab2;
   }
   html[data-theme=light] {
-    background-color: #929ea5;
+    background-color: rgb(169, 186, 195);
     color: #060d0c;
   }
 `;

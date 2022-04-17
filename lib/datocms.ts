@@ -38,11 +38,48 @@ export const query = gql`
     home(locale: $locale) {
       ...HomeRecordFragment
     }
+    project(locale: $locale) {
+      ...ProjectRecordFragment
+    }
+    service(locale: $locale) {
+      ...ServiceRecordFragment
+    }
   }
+
   fragment HomeRecordFragment on HomeRecord {
     title
     phone
     email
     description
+  }
+
+  fragment ProjectRecordFragment on ProjectRecord {
+    projects {
+      area
+      address
+      cloudLink
+      completed
+      contractor
+      googleMap
+      id
+      jobType
+      projectDescription
+      projectName
+      projectNumber
+      releaseDate
+      projectImage {
+        url
+      }
+    }
+  }
+
+  fragment ServiceRecordFragment on ServiceRecord {
+    title
+    description
+    serviceCard {
+      id
+      cardTitle
+      cardDescription
+    }
   }
 `;
