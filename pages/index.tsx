@@ -16,6 +16,9 @@ const Services = dynamic(() => import('@Components/services'));
 const Projects = dynamic(() => import('@Components/projects'));
 const About = dynamic(() => import('@Components/about'));
 const Footer = dynamic(() => import('@Components/footer'));
+const GoToTopButton = dynamic(
+  () => import('@Components/go-to-top/GoToTopButton')
+);
 import { Details } from '@Components/projects/details/Details';
 
 const Home: NextPage = ({
@@ -45,8 +48,9 @@ const Home: NextPage = ({
         </ModalContext.Provider>
         <Services />
         <About />
-        <Footer />
       </main>
+      <Footer />
+      <GoToTopButton />
     </Store.Provider>
   );
 };

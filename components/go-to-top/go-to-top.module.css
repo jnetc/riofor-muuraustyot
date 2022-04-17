@@ -1,0 +1,49 @@
+.module {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: none;
+  position: sticky;
+  left: 100%;
+  bottom: 2rem;
+  opacity: 0.8;
+  background-color: var(--bg);
+  border: 2px solid transparent;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 15px 20px var(--btn-fill-shadow-darken),
+    0 5px 5px var(--btn-fill-shadow-darken);
+  cursor: pointer;
+  z-index: 500;
+}
+.module::before,
+.module::after {
+  content: '';
+  width: 12px;
+  height: 3px;
+  position: absolute;
+  top: 11px;
+  left: 6px;
+  background-color: var(--primary-color);
+  transform-origin: center right;
+  border-radius: 5px;
+}
+.module::before {
+  transform: translateX(-1px) rotate(-135deg);
+}
+.module::after {
+  transform: translateX(1px) rotate(-45deg);
+}
+.module:hover {
+  border-color: var(--primary-clr);
+  opacity: 1;
+}
+
+.module.view {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .module {
+    bottom: 1rem;
+  }
+}

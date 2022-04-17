@@ -1,9 +1,11 @@
 .module {
-  display: grid;
-  /* grid-template-columns: repeat(auto-fit, max-content); */
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, max-content);
   gap: 2rem;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
+  margin-block-start: 2rem;
+  text-align: center;
 }
 .module :local(address) {
   /* justify-self: flex-end; */
@@ -30,7 +32,7 @@
 
 .year {
   grid-column: 1 / -1;
-  margin-block-end: 1rem;
+  margin-block: 2rem 1rem;
   text-align: center;
 }
 

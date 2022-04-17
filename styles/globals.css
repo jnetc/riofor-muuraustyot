@@ -84,7 +84,7 @@ html {
 html,
 body,
 #__next {
-  min-height: 100%;
+  /* min-height: 100%; */
   position: relative;
 }
 body {
@@ -142,7 +142,7 @@ main {
 
 @media (max-width: 960px) {
   body {
-    padding: 1rem;
+    padding: 1rem 1rem 0;
   }
   main {
     margin-block-start: 5rem;

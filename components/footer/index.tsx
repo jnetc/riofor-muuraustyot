@@ -1,17 +1,17 @@
-import Image from 'next/image';
+// import Image from 'next/image';
 // Hook
-import { useStore } from '@Hooks/useStore';
+// import { useStore } from '@Hooks/useStore';
 // Styles
 import styles from './footer.module.css';
 // Lang
-import { labels } from '@Lang';
+// import { labels } from '@Lang';
 
 const Footer = () => {
-  const { data, language } = useStore();
+  // const { data, language } = useStore();
   const year = new Date().getFullYear();
   return (
     <footer className={styles.module}>
-      <address>
+      {/* <address>
         <p>
           <strong>{labels.address[language]}:</strong>
           {data?.home.address}
@@ -24,7 +24,7 @@ const Footer = () => {
           <strong>{labels.email[language]}:</strong>
           {data?.home.email}
         </p>
-      </address>
+      </address> */}
       {/* <a
         href="https://zeckit.com/selvitys/FI/1905493-0?lang=fi"
         target="_blank"
@@ -45,9 +45,8 @@ const Footer = () => {
           objectFit="contain"
         />
       </a> */}
-      <span className={styles.year}>
-        Copyright © {year} Riofor-Muuraustyöt Oy
-      </span>
+      Copyright © {year} Riofor-Muuraustyöt Oy
+      <span className={styles.year}></span>
     </footer>
   );
 };
