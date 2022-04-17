@@ -70,7 +70,7 @@ export const project_titles = {
   },
 };
 
-export const project_labels = {
+export const labels = {
   number: {
     fi: 'Numero',
     ru: 'Номер',
@@ -90,6 +90,14 @@ export const project_labels = {
   address: {
     fi: 'Osoite',
     ru: 'Адрес',
+  },
+  phone: {
+    fi: 'Puhelin',
+    ru: 'Телефон',
+  },
+  email: {
+    fi: 'E-posti',
+    ru: 'Эл. почта',
   },
   jobtype: {
     fi: 'Työn tyyppi',

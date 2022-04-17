@@ -15,6 +15,7 @@ import Main from '@Components/main';
 const Services = dynamic(() => import('@Components/services'));
 const Projects = dynamic(() => import('@Components/projects'));
 const About = dynamic(() => import('@Components/about'));
+const Footer = dynamic(() => import('@Components/footer'));
 import { Details } from '@Components/projects/details/Details';
 
 const Home: NextPage = ({
@@ -44,6 +45,7 @@ const Home: NextPage = ({
         </ModalContext.Provider>
         <Services />
         <About />
+        <Footer />
       </main>
     </Store.Provider>
   );
@@ -67,7 +69,8 @@ const data = {
   home: {
     title: 'etsitkö muurareitä?',
     phone: '+358405815359',
-    email: 'maria@riofor.com',
+    email: 'rioformuuraustyotoy@gmail.com',
+    address: 'Mäenrinne 14, 02160 Espoo',
     description:
       'Olemme perustaneet itsemme alan ammattilaisiksi ja meillä on laaja kokemus muurauksen rakentamisesta.',
   },

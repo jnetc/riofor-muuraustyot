@@ -9,7 +9,7 @@ import styles from './details.module.css';
 // Component
 import { CloseButton } from '@Components/close-button/CloseButton';
 // Lang
-import { project_labels, project_titles } from '@Lang';
+import { labels, project_titles } from '@Lang';
 
 export const Details = () => {
   const { language } = useStore();
@@ -64,43 +64,43 @@ export const Details = () => {
                 </h3>
                 <p
                   className={`paragraph ${styles.line}`}
-                  data-label={project_labels.number[language]}
+                  data-label={labels.number[language]}
                 >
                   {data.projectNumber}
                 </p>
                 <p
                   className={`paragraph ${styles.line}`}
-                  data-label={project_labels.name[language]}
+                  data-label={labels.name[language]}
                 >
                   {data.projectName}
                 </p>
                 <p
                   className={`paragraph ${styles.line}`}
-                  data-label={project_labels.date[language]}
+                  data-label={labels.date[language]}
                 >
                   {data.releaseDate}
                 </p>
                 <p
                   className={`paragraph ${styles.line}`}
-                  data-label={project_labels.contractor[language]}
+                  data-label={labels.contractor[language]}
                 >
                   {data.contractor}
                 </p>
                 <p
                   className={`paragraph ${styles.line}`}
-                  data-label={project_labels.address[language]}
+                  data-label={labels.address[language]}
                 >
                   {data.address}
                 </p>
                 <p
                   className={`paragraph ${styles.line}`}
-                  data-label={project_labels.jobtype[language]}
+                  data-label={labels.jobtype[language]}
                 >
                   {data.jobType}
                 </p>
                 <p
                   className={`paragraph ${styles.line}`}
-                  data-label={project_labels.area[language]}
+                  data-label={labels.area[language]}
                 >
                   {data.area} m<sup>2</sup>
                 </p>

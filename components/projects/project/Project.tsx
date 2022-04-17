@@ -9,7 +9,7 @@ import { ProjectType } from '@Types';
 import { useStore } from '@Hooks/useStore';
 import { useModal } from '@Hooks/useModal';
 // Lang
-import { project_labels } from '@Lang';
+import { labels } from '@Lang';
 
 export const Project: FC<{ data: ProjectType<string> }> = ({ data }) => {
   const { language } = useStore();
@@ -35,21 +35,21 @@ export const Project: FC<{ data: ProjectType<string> }> = ({ data }) => {
           {data.completed && <CompleteIcons />}
         </span>
 
-        <div className={styles.date} data-label={project_labels.date[language]}>
+        <div className={styles.date} data-label={labels.date[language]}>
           {data.releaseDate}
         </div>
         <div
           className={styles.contractor}
-          data-label={project_labels.contractor[language]}
+          data-label={labels.contractor[language]}
         >
           {data.contractor}
         </div>
-        <div className={styles.name} data-label={project_labels.name[language]}>
+        <div className={styles.name} data-label={labels.name[language]}>
           {data.projectName}
         </div>
         <address
           className={styles.address}
-          data-label={project_labels.address[language]}
+          data-label={labels.address[language]}
         >
           {data.address}
         </address>

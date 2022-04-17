@@ -9,7 +9,7 @@ module.exports = {
     localeDetection: false,
   },
   images: {
-    domains: ['www.datocms-assets.com'],
+    domains: ['www.datocms-assets.com', 'zpckit.s3.amazonaws.com'],
   },
 };
 // module.exports = withPWA({

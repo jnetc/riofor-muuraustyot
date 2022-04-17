@@ -51,9 +51,10 @@ export const query = gql`
 
   fragment HomeRecordFragment on HomeRecord {
     title
+    description
     phone
     email
-    description
+    address
   }
 
   fragment ProjectRecordFragment on ProjectRecord {
