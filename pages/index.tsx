@@ -6,7 +6,8 @@ import { useState } from 'react';
 import { request, query } from 'lib/datocms';
 // Hooks
 import { Store } from '@Hooks/useStore';
-import { ModalContext } from '@Hooks/useModal';
+import { ContactsContext } from '@Hooks/useContacts';
+import { DetailsContext } from '@Hooks/useDetails';
 // Components
 import { extraCSS } from '@Helpers/critical';
 import Navigation from '@Components/navigation';
@@ -20,14 +21,15 @@ const GoToTopButton = dynamic(
   () => import('@Components/go-to-top/GoToTopButton')
 );
 import { Details } from '@Components/projects/details/Details';
-import { GetInTouch } from '@Components/main/get-in-touch';
+import { Contacts } from '@Components/main/contacts';
 
 const Home: NextPage = ({
   data,
   language,
   languages,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const [modal, openModal] = useState({ active: false });
+  const [details, openDetails] = useState({ active: false });
+  const [contacts, openContacts] = useState({ active: false });
 
   if (!data) {
     return <main>Sorry! This page not found.</main>;
@@ -42,14 +44,16 @@ const Home: NextPage = ({
       </Head>
       <Navigation />
       <main>
-        <ModalContext.Provider value={{ modal, openModal }}>
+        <ContactsContext.Provider value={{ contacts, openContacts }}>
           <Main />
-          <GetInTouch />
-        </ModalContext.Provider>
-        <ModalContext.Provider value={{ modal, openModal }}>
+          <Contacts />
+        </ContactsContext.Provider>
+
+        <DetailsContext.Provider value={{ details, openDetails }}>
           <Projects />
           <Details />
-        </ModalContext.Provider>
+        </DetailsContext.Provider>
+
         <Services />
         <About />
       </main>

@@ -1,9 +1,10 @@
 import { useEffect, useRef } from 'react';
+import Link from 'next/link';
 // Style
-import style from './go-to-top.module.css';
+import styles from './go-to-top.module.css';
 
 const GoToTop = () => {
-  const refToTop = useRef<HTMLDivElement>(null);
+  const refToTop = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     if (!refToTop.current) return;
@@ -12,10 +13,10 @@ const GoToTop = () => {
       const fromTop = window.innerHeight / 5;
 
       if (position < fromTop) {
-        refToTop.current?.classList.remove(`${style.view}`);
+        refToTop.current?.classList.remove(`${styles.view}`);
         return;
       }
-      refToTop.current?.classList.add(`${style.view}`);
+      refToTop.current?.classList.add(`${styles.view}`);
     });
 
     return () => {
@@ -23,18 +24,17 @@ const GoToTop = () => {
     };
   }, []);
 
-  const goToTop = () => window.scrollTo({ top: 0 });
-
   return (
-    <span
-      className={`${style.module} grid-12`}
-      ref={refToTop}
-      role="button"
-      tabIndex={0}
-      aria-label="go to top button"
-      title="go to top button"
-      onClick={goToTop}
-    />
+    <Link href="/">
+      <a
+        className={`${styles.module}`}
+        ref={refToTop}
+        role="button"
+        tabIndex={0}
+        aria-label="go to top button"
+        title="go to top button"
+      />
+    </Link>
   );
 };
 

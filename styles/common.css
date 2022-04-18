@@ -159,19 +159,20 @@
   inset: 0;
   overflow-y: auto;
   border: none;
+  /* background-color: var(--dialog-backdrop); */
   background-color: var(--bg);
-  box-shadow: 0 0 0 100vw rgba(0 0 0 / 0.5);
+  /* box-shadow: 0 0 0 100vw rgba(0 0 0 / 0.5); */
   z-index: 9999;
 }
 .modal[open] {
   display: flex;
-  animation: fade-in 0.3s cubic-bezier(0, 1.1, 0.5, 1) forwards;
+  animation: fade-in 0.2s ease-in-out forwards; /*  cubic-bezier(0, 1.1, 0.5, 1)*/
 }
 
 @keyframes fade-in {
   0% {
     opacity: 0;
-    transform: scale(0);
+    transform: scale(0.8);
   }
   100% {
     opacity: 1;

@@ -1,7 +1,7 @@
 import { useState, MouseEvent } from 'react';
 // Hook
 import { useStore } from '@Hooks/useStore';
-import { useModal } from '@Hooks/useModal';
+import { useDetails } from '@Hooks/useDetails';
 // Components
 import { Project } from './project/Project';
 // Helpers
@@ -13,7 +13,7 @@ import { projects } from '@Lang';
 
 const Projects = () => {
   const { data, language } = useStore();
-  const { openModal } = useModal();
+  const { openDetails } = useDetails();
   const [toggle, setToggle] = useState(false);
 
   // If we don't have projects
@@ -53,14 +53,14 @@ const Projects = () => {
 
   const toggleHandler = () => setToggle(!toggle);
 
-  const openDetails = (event: MouseEvent<HTMLDivElement>) => {
+  const open = (event: MouseEvent<HTMLDivElement>) => {
     const el = event.target as HTMLDivElement;
     const id = el.closest('section')?.id || '';
     const findProject = data.project.projects.find(
       project => project.id === id
     );
 
-    openModal({ active: true, data: findProject });
+    openDetails({ active: true, data: findProject });
   };
 
   return (
@@ -69,13 +69,13 @@ const Projects = () => {
       <h3 className={styles.title}>
         {projects.active[language]} {active.length}
       </h3>
-      <div className={styles.blocks} onClick={openDetails}>
+      <div className={styles.blocks} onClick={open}>
         {inprocess}
       </div>
       <h3 className={styles.title} id="finished">
         {projects.finished[language]} {finished.length}
       </h3>
-      <div className={styles.blocks} onClick={openDetails}>
+      <div className={styles.blocks} onClick={open}>
         {outprocess}
       </div>
       {outprocess.length > 3 && (

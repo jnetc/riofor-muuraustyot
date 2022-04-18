@@ -22,8 +22,8 @@ class MyDocument extends Document {
         </Head>
         <body id="home">
           <Main />
-          <div id="portal-project" />
-          <div id="portal-contact" />
+          <div id="portal-details" />
+          <div id="portal-contacts" />
           <NextScript />
         </body>
       </Html>

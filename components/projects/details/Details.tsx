@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import Image from 'next/image';
 // Hook
-import { useModal } from '@Hooks/useModal';
+import { useDetails } from '@Hooks/useDetails';
 import { useStore } from '@Hooks/useStore';
+import { useHideScrollbar } from '@Hooks/useHideScrollbar';
 // style
 import styles from './details.module.css';
 // Component
@@ -14,19 +14,13 @@ import { labels, project_titles } from '@Lang';
 export const Details = () => {
   const { language } = useStore();
   const {
-    modal: { data, active },
-    openModal,
-  } = useModal();
+    details: { data, active },
+    openDetails,
+  } = useDetails();
 
-  const close = () => openModal({ active: false, data: null });
+  const close = () => openDetails({ active: false, data: null });
 
-  useEffect(() => {
-    if (active) {
-      document.body.style.overflow = 'hidden';
-      return;
-    }
-    document.body.removeAttribute('style');
-  }, [active]);
+  useHideScrollbar(active);
 
   return active && data
     ? createPortal(
@@ -116,7 +110,7 @@ export const Details = () => {
             </article>
           </section>
         </dialog>,
-        document.getElementById('portal-project') as HTMLDivElement
+        document.getElementById('portal-details') as HTMLDivElement
       )
     : null;
 };

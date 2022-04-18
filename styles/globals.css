@@ -38,6 +38,8 @@ html[data-theme='light'] {
 
   --btn-fill-shadow-darken: hsla(191, 10%, 60%, 0.3);
   --btn-fill-shadow-lighten: hsla(191, 10%, 60%, 0.2);
+
+  --dialog-backdrop: rgba(62, 69, 72, 0.9);
 }
 html[data-theme='dark'] {
   --bg: rgb(26, 30, 30);
@@ -68,6 +70,8 @@ html[data-theme='dark'] {
 
   --btn-fill-shadow-darken: rgba(0, 0, 0, 0.5);
   --btn-fill-shadow-lighten: rgba(0, 0, 0, 0.3);
+
+  --dialog-backdrop: rgba(62, 69, 72, 0.9);
 }
 
 *,
@@ -80,6 +84,7 @@ html[data-theme='dark'] {
 }
 html {
   transition: all 0.2s ease-in-out;
+  scrollbar-gutter: stable;
 }
 html,
 body,

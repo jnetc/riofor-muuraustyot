@@ -7,14 +7,14 @@ import styles from './project.module.css';
 import { ProjectType } from '@Types';
 // Hook
 import { useStore } from '@Hooks/useStore';
-import { useModal } from '@Hooks/useModal';
+import { useDetails } from '@Hooks/useDetails';
 // Lang
 import { labels } from '@Lang';
 
 export const Project: FC<{ data: ProjectType<string> }> = ({ data }) => {
   const { language } = useStore();
-  const { openModal } = useModal();
-  const modalHandler = () => openModal({ active: true, data });
+  const { openDetails } = useDetails();
+  const modalHandler = () => openDetails({ active: true, data });
 
   return (
     <>
