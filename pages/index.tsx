@@ -83,6 +83,7 @@ const data = {
     phone: '+358405815359',
     email: 'rioformuuraustyotoy@gmail.com',
     address: 'Mäenrinne 14, 02160 Espoo',
+    person: 'Maria Stefanidou',
     description:
       'Olemme perustaneet itsemme alan ammattilaisiksi ja meillä on laaja kokemus muurauksen rakentamisesta.',
   },

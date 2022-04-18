@@ -55,6 +55,7 @@ export const query = gql`
     phone
     email
     address
+    person
   }
 
   fragment ProjectRecordFragment on ProjectRecord {

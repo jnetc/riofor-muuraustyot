@@ -72,12 +72,12 @@ export const Contacts = () => {
             </a>
           </div>
           <div className={styles.info}>
-            <CopyButton value={'Maria Stefanidou'} />
+            <CopyButton value={data.home.person} />
             <p
               className={`paragraph ${styles.line}`}
               data-label={labels.person[language]}
             >
-              Maria Stefanidou
+              {data.home.person}
             </p>
             <CopyButton value={data.home.address} />
             <p

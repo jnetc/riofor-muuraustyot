@@ -17,6 +17,7 @@ interface HomeType<T> extends ArticleType<T> {
   phone: T;
   email: T;
   address: T;
+  person: T;
 }
 export interface ProjectType<T> extends ArticleType<T> {
   area: T;
