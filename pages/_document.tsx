@@ -23,6 +23,7 @@ class MyDocument extends Document {
         <body id="home">
           <Main />
           <div id="portal-project" />
+          <div id="portal-contact" />
           <NextScript />
         </body>
       </Html>

@@ -116,7 +116,7 @@ export const Details = () => {
             </article>
           </section>
         </dialog>,
-        document.getElementById('portal-project') as HTMLElement
+        document.getElementById('portal-project') as HTMLDivElement
       )
     : null;
 };

@@ -20,6 +20,7 @@ const GoToTopButton = dynamic(
   () => import('@Components/go-to-top/GoToTopButton')
 );
 import { Details } from '@Components/projects/details/Details';
+import { GetInTouch } from '@Components/main/get-in-touch';
 
 const Home: NextPage = ({
   data,
@@ -41,7 +42,10 @@ const Home: NextPage = ({
       </Head>
       <Navigation />
       <main>
-        <Main />
+        <ModalContext.Provider value={{ modal, openModal }}>
+          <Main />
+          <GetInTouch />
+        </ModalContext.Provider>
         <ModalContext.Provider value={{ modal, openModal }}>
           <Projects />
           <Details />
