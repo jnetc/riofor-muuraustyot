@@ -36,8 +36,8 @@ html[data-theme='light'] {
 
   --svg: rgb(83, 93, 107);
 
-  --btn-fill-shadow-darken: hsla(191, 10%, 60%, 0.3);
-  --btn-fill-shadow-lighten: hsla(191, 10%, 60%, 0.2);
+  --btn-fill-shadow-darken: hsla(191, 10%, 55%, 0.5);
+  --btn-fill-shadow-lighten: hsla(191, 10%, 55%, 0.3);
 
   --dialog-backdrop: rgba(62, 69, 72, 0.9);
 }

@@ -1,0 +1,92 @@
+.module {
+  width: 2.3rem;
+  height: 2.3rem;
+  position: relative;
+  display: flex;
+  z-index: 5;
+}
+.module::after {
+  content: attr(data-copy);
+  position: absolute;
+  top: -2.2rem;
+  left: 50%;
+  padding: 0.3rem 0.5rem;
+  opacity: 0;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  color: var(--bg);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  transform: translate(-50%, 25px) scale(0);
+  transition: all 0.3s cubic-bezier(0, 0.98, 0.44, 1.05);
+  pointer-events: none;
+  z-index: -1;
+}
+.module.is_copy::after {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+.copy_icon {
+  width: 12px;
+  height: 15px;
+  position: absolute;
+  top: 14px;
+  left: 15px;
+  opacity: 1;
+  border: 2px solid var(--primary-color);
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1);
+}
+.copy_icon::after {
+  content: '';
+  width: inherit;
+  height: inherit;
+  position: inherit;
+  top: -7px;
+  left: -7px;
+  border: 2px solid transparent;
+  border-top-color: var(--primary-color);
+  border-left-color: var(--primary-color);
+  border-radius: inherit;
+}
+.module.is_copy .copy_icon {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.copied_icon {
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  opacity: 0;
+  transform-origin: 50% center;
+  transition: all 0.3s ease-in-out;
+  transform: scale(0);
+}
+.copied_icon::after,
+.copied_icon::before {
+  content: '';
+  height: 3px;
+  position: absolute;
+  background-color: var(--primary-color);
+}
+.copied_icon::after {
+  width: 11px;
+  top: 15px;
+  left: 2px;
+  transform: rotate(45deg);
+}
+.copied_icon::before {
+  width: 18px;
+  left: 7px;
+  top: 10px;
+  transform: rotate(-55deg);
+}
+.module.is_copy .copied_icon {
+  opacity: 1;
+  transform: scale(1);
+}

@@ -71,6 +71,10 @@ export const project_titles = {
 };
 
 export const labels = {
+  person: {
+    fi: 'Yhteyshenkilö',
+    ru: 'Контактное лицо',
+  },
   number: {
     fi: 'Numero',
     ru: 'Номер',
@@ -96,7 +100,7 @@ export const labels = {
     ru: 'Телефон',
   },
   email: {
-    fi: 'E-posti',
+    fi: 'Sähköposti',
     ru: 'Эл. почта',
   },
   jobtype: {

@@ -1,3 +1,74 @@
 .module {
   display: flex;
+  align-items: center;
+  flex-flow: column;
+  padding: 2rem 1rem;
+}
+.buttons {
+  display: flex;
+  align-items: center;
+  padding-block: 3rem 4rem;
+  gap: 2rem;
+}
+.button {
+  width: 5rem;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  fill: var(--btn-txt-fill);
+  background-color: var(--btn-fill);
+  border-radius: 50%;
+  box-shadow: 0 10px 15px var(--btn-fill-shadow-darken),
+    0 30px 30px var(--btn-fill-shadow-lighten);
+  transition: all 0.3s ease-in-out;
+}
+.button:hover {
+  background: var(--primary-color);
+  box-shadow: none;
+}
+.button:where(.phone, .email, .location) svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+}
+
+.button.phone svg {
+  width: 1.9rem;
+}
+.button.email svg {
+  width: 2rem;
+}
+.button.location svg {
+  height: 2rem;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 35px 1fr;
+  column-gap: 1rem;
+  row-gap: 1.6rem;
+  position: relative;
+}
+.line {
+  align-self: flex-end;
+  position: relative;
+  overflow: hidden;
+  padding-block-start: 1rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.line::after {
+  content: attr(data-label);
+  position: absolute;
+  top: -0.3rem;
+  left: 0;
+  color: var(--label);
+  font-size: 0.9rem;
+}
+
+.image {
+  height: 300px;
+  aspect-ratio: 1 / 1.2;
+  position: relative;
+  margin-inline: auto;
 }
