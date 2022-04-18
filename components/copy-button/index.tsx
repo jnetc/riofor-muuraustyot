@@ -13,7 +13,7 @@ export const CopyButton = (text: { value: string }) => {
     const clean = setTimeout(() => {
       setIsCopy(false);
       clearTimeout(clean);
-    }, 3000);
+    }, 1000);
   };
 
   return (
