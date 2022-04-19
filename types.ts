@@ -14,6 +14,7 @@ interface SEO<T> {
 }
 interface PosterType<T> {
   url: T;
+  blurUpThumb: T;
 }
 interface HomeType<T> extends ArticleType<T> {
   phone: T;

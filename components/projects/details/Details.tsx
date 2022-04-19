@@ -36,6 +36,8 @@ export const Details = () => {
                 alt={data.projectName}
                 layout="fill"
                 objectFit="cover"
+                blurDataURL={data.projectImage.blurUpThumb}
+                placeholder="blur"
               />
             </div>
             <a

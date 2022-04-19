@@ -65,15 +65,15 @@ const Projects = () => {
 
   return (
     <section id="projects">
-      <h3 className={styles.title}>
+      <h2 className={styles.title}>
         {projects.active[language]} {active.length}
-      </h3>
+      </h2>
       <div className={styles.blocks} onClick={open}>
         {inprocess}
       </div>
-      <h3 className={styles.title} id="finished">
+      <h2 className={styles.title} id="finished">
         {projects.finished[language]} {finished.length}
-      </h3>
+      </h2>
       <div className={styles.blocks} onClick={open}>
         {outprocess}
       </div>
