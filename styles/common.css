@@ -162,9 +162,7 @@
   inset: 0;
   overflow-y: auto;
   border: none;
-  /* background-color: var(--dialog-backdrop); */
   background-color: var(--bg);
-  /* box-shadow: 0 0 0 100vw rgba(0 0 0 / 0.5); */
   z-index: 9999;
 }
 .modal[open] {

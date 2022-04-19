@@ -108,7 +108,8 @@ span,
 button,
 label,
 div,
-time {
+time,
+address {
   font-family: 'Roboto';
   transition: all 0.2s ease-in-out;
 }

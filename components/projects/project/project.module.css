@@ -20,6 +20,7 @@
 .module.active,
 .module.finished {
   color: var(--primary-color);
+  transition: all 0.2s ease-in-out;
 }
 .module.active {
   background-color: var(--project-active);
@@ -57,6 +58,7 @@
   border-radius: 50%;
   background: var(--primary-color);
   transform: translate(-50%, -50%);
+  transition: all 0.3s ease-in-out;
 }
 .status.active::before {
   box-shadow: 0 0 0px 0px var(--primary-color);
@@ -103,10 +105,12 @@
   font-size: 0.6em;
   font-weight: 400;
   white-space: nowrap;
+  transition: all 0.3s ease-in-out;
   z-index: 5;
 }
 .module svg {
   fill: var(--primary-color);
+  transition: all 0.3s ease-in-out;
 }
 
 @media screen and (max-width: 960px) {
