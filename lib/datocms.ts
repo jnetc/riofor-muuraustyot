@@ -60,13 +60,12 @@ export const query = gql`
 
   fragment ProjectRecordFragment on ProjectRecord {
     projects {
+      id
       area
       address
       cloudLink
       completed
       contractor
-      googleMap
-      id
       jobType
       projectDescription
       projectName

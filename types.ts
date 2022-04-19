@@ -25,7 +25,6 @@ export interface ProjectType<T> extends ArticleType<T> {
   cloudLink: T;
   completed: boolean;
   contractor: T;
-  googleMap: T;
   id: T;
   jobType: T;
   projectDescription: T;

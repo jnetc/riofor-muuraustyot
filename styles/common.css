@@ -79,6 +79,7 @@
   border: 2px solid transparent;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  user-select: none;
   z-index: 5;
 }
 .button-with-icon {
@@ -132,6 +133,8 @@
 .button-with-icon.disable {
   background-color: var(--btn-disable);
   color: var(--btn-txt-disable);
+  box-shadow: none;
+  pointer-events: none;
 }
 .btn-icon {
   grid-column: 2;

@@ -86,14 +86,14 @@ export const Contacts = () => {
             >
               {data.home.address}
             </p>
-            <CopyButton value={data.home.address} />
+            <CopyButton value={data.home.phone} />
             <p
               className={`paragraph ${styles.line}`}
               data-label={labels.phone[language]}
             >
               {data.home.phone}
             </p>
-            <CopyButton value={data.home.phone} />
+            <CopyButton value={data.home.email} />
             <p
               className={`paragraph ${styles.line}`}
               data-label={labels.email[language]}

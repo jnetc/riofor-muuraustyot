@@ -18,6 +18,9 @@ export const Details = () => {
     openDetails,
   } = useDetails();
 
+  const converAddress = data?.address.split(' ').join('+');
+  const url = `https://www.google.fi/maps/place/${converAddress}`;
+
   const close = () => openDetails({ active: false, data: null });
 
   useHideScrollbar(active);
@@ -36,20 +39,20 @@ export const Details = () => {
               />
             </div>
             <a
-              href={data.cloudLink}
-              className={`button fill ${!data.cloudLink ?? 'disable'}`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Kuvat pilvissa
-            </a>
-            <a
-              href={data.googleMap}
-              className={`button fill ${!data.googleMap ?? 'disable'}`}
+              href={url}
+              className={`button fill`}
               target="_blank"
               rel="noreferrer"
             >
               Osoite kartalla
+            </a>
+            <a
+              href={data.cloudLink}
+              className={`button fill ${data.cloudLink ? '' : 'disable'}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Kuvat pilvissa
             </a>
             <article className={styles.information}>
               <div className={`${styles.info_block} ${styles.left}`}>
