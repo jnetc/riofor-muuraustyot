@@ -1,7 +1,8 @@
 import { useStore } from '@Hooks/useStore';
 import { useContacts } from '@Hooks/useContacts';
 // Icon
-import { Icons } from '@Components/icons/Icons';
+import { PaperPlain } from '@Components/icons/PaperPlain';
+import { Projects } from '@Components/icons/Projects';
 // Styles
 import styles from './leftside.module.css';
 // Lang
@@ -20,12 +21,16 @@ export const LeftSide = () => {
 
       <button className="button-with-icon fill fit" onClick={open}>
         {buttons_main.offer[language]}
-        <Icons icon="paperplain" />
+        <div className="btn-icon normal">
+          <PaperPlain />
+        </div>
       </button>
 
       <a href="#projects" className="button-with-icon line fit">
         {buttons_main.projects[language]}
-        <Icons icon="projects" />
+        <div className="btn-icon normal">
+          <Projects />
+        </div>
       </a>
     </div>
   );

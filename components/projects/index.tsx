@@ -65,7 +65,6 @@ const Projects = () => {
 
   return (
     <section id="projects">
-      {/* <h2 className="section-title">{projects.title[language]}</h2> */}
       <h3 className={styles.title}>
         {projects.active[language]} {active.length}
       </h3>

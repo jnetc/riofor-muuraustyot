@@ -58,7 +58,6 @@ export const Project: FC<{ data: ProjectType<string> }> = ({ data }) => {
         ) : (
           <span className="expand-icon dark" />
         )}
-        {/* <Image image={data?.image} alt={data?.name} modal={false} /> */}
       </section>
     </>
   );

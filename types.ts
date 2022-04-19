@@ -1,3 +1,5 @@
+import { ReactChild, Dispatch, SetStateAction } from 'react';
+
 export type LanguagesType = 'ru' | 'fi';
 
 interface ArticleType<T> {
@@ -56,4 +58,10 @@ export interface DataType {
   project: ProjectsType<string>;
   service: ServiceType<string>;
   about: AboutType<string>;
+}
+
+export interface NavMobLinksProps {
+  children: ReactChild;
+  open: boolean;
+  handler: Dispatch<SetStateAction<boolean>>;
 }

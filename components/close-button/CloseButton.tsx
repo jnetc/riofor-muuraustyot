@@ -1,6 +1,4 @@
-import { FC } from 'react';
-
-export const CloseButton: FC<{ handler: () => void }> = ({ handler }) => {
+export const CloseButton = ({ handler }: { handler: () => void }) => {
   return (
     <button
       type="button"

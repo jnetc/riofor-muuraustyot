@@ -84,6 +84,7 @@ export const query = gql`
       id
       cardTitle
       cardDescription
+      icon
     }
   }
 
