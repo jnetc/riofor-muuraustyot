@@ -117,7 +117,6 @@
 .button.line,
 .button-with-icon.line {
   color: var(--btn-txt-line);
-  border-color: 11px;
   border: 2px solid var(--btn-txt-line);
 }
 .button.line:hover,

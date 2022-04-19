@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="google" content="notranslate" />
         <meta
           name="keywords"
-          content="muuraustyöt, riofor, riofor muuraustyöt, muuraus, julkisivutyö, rappaus"
+          content="muuraustyöt, riofor, riofor muuraustyöt, muuraus, muurari, muurarit, julkisivutyö, korjausmuuraus, väliseinämuuraukset, rappaus, каменщики, строительная фирма в финляндии, кирпичная кладка, различные виды кладок"
         />
         <meta name="mobile-web-app-capable" content="yes" />
 

@@ -35,6 +35,9 @@ export function request({
 
 export const query = gql`
   query MyQuery($locale: SiteLocale) {
+    _site {
+      ...SiteFragment
+    }
     home(locale: $locale) {
       ...HomeRecordFragment
     }
@@ -48,7 +51,14 @@ export const query = gql`
       ...AboutRecordFragment
     }
   }
-
+  fragment SiteFragment on Site {
+    globalSeo(locale: $locale) {
+      fallbackSeo {
+        description
+        title
+      }
+    }
+  }
   fragment HomeRecordFragment on HomeRecord {
     title
     description
