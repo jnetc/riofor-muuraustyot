@@ -20,9 +20,11 @@
   },
   "devDependencies": {
     "@netlify/plugin-nextjs": "^4.21.2",
+    "@types/cacheable-request": "6.0.2",
     "@types/node": "18.7.16",
     "@types/react": "18.0.18",
     "@types/react-dom": "18.0.6",
+    "@types/responselike": "1.0.0",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",
     "typescript": "4.8.2"
