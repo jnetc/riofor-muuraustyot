@@ -23,16 +23,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <meta name="mobile-web-app-capable" content="yes" />
 
-        <meta
-          name="theme-color"
-          media="(prefers-color-scheme: light)"
-          content="#929ea5"
-        />
-        <meta
-          name="theme-color"
-          media="(prefers-color-scheme: dark)"
-          content="#060d0c"
-        />
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#929ea5" />
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#060d0c" />
 
         <link rel="alternate" href="https://riofor.com/ru" hrefLang="ru" />
         <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml" />
@@ -40,11 +32,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         {/* Apple */}
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-title" content="riofor.com" />
-        <link
-          rel="apple-touch-icon"
-          sizes="192x192"
-          href="/icons/icon-192x192.png"
-        />
+        <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png" />
       </Head>
       <Component {...pageProps} />
     </>
