@@ -43,7 +43,7 @@
 
 .h2-title {
   color: var(--title);
-  font-size: clamp(1.5em, 4vw, 2em);
+  font-size: clamp(1.3em, 4vw, 1.5em);
   line-height: 1.05;
   letter-spacing: 0.5px;
   text-align: center;
@@ -102,8 +102,7 @@
 .button-with-icon.fill {
   color: var(--btn-txt-fill);
   background: var(--btn-fill);
-  box-shadow: 0 10px 15px var(--btn-fill-shadow-darken),
-    0 30px 30px var(--btn-fill-shadow-lighten);
+  box-shadow: 0 10px 15px var(--btn-fill-shadow-darken), 0 30px 30px var(--btn-fill-shadow-lighten);
 }
 .button.fill:hover,
 .button-with-icon.fill:hover {
