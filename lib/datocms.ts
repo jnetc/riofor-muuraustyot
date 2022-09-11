@@ -22,9 +22,7 @@ export function request({
   variables: {};
   preview?: boolean;
 }): Promise<Data> {
-  const endpoint = preview
-    ? `https://graphql.datocms.com/preview`
-    : `https://graphql.datocms.com/`;
+  const endpoint = preview ? `https://graphql.datocms.com/preview` : `https://graphql.datocms.com/`;
   const client = new GraphQLClient(endpoint, {
     headers: {
       authorization: `Bearer ${process.env.NEXT_PUBLIC_NEXT_DATOCMS_API_TOKEN}`,
@@ -34,25 +32,25 @@ export function request({
 }
 
 export const query = gql`
-  query MyQuery($locale: SiteLocale) {
+  query MyQuery {
     _site {
       ...SiteFragment
     }
-    home(locale: $locale) {
+    home {
       ...HomeRecordFragment
     }
-    project(locale: $locale) {
+    project {
       ...ProjectRecordFragment
     }
-    service(locale: $locale) {
+    service {
       ...ServiceRecordFragment
     }
-    about(locale: $locale) {
+    about {
       ...AboutRecordFragment
     }
   }
   fragment SiteFragment on Site {
-    globalSeo(locale: $locale) {
+    globalSeo {
       fallbackSeo {
         description
         title
@@ -77,6 +75,7 @@ export const query = gql`
       completed
       contractor
       jobType
+      geolocation
       projectDescription
       projectName
       projectNumber

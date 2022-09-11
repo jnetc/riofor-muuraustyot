@@ -8,11 +8,9 @@ import { Project } from './project/Project';
 import { compare } from '@Helpers/functions';
 // Styles
 import styles from './projects.module.css';
-// Lang
-import { projects } from '@Lang';
 
 const Projects = () => {
-  const { data, language } = useStore();
+  const { data } = useStore();
   const { openDetails } = useDetails();
   const [toggle, setToggle] = useState(false);
 
@@ -20,7 +18,7 @@ const Projects = () => {
   if (!data?.project) {
     return (
       <section id="projects">
-        <h2 className="section-title">{projects.error[language]}</h2>
+        <h2 className="section-title">Ei ole projektia</h2>
       </section>
     );
   }
@@ -56,34 +54,26 @@ const Projects = () => {
   const open = (event: MouseEvent<HTMLDivElement>) => {
     const el = event.target as HTMLDivElement;
     const id = el.closest('section')?.id || '';
-    const findProject = data.project.projects.find(
-      project => project.id === id
-    );
+    const findProject = data.project.projects.find(project => project.id === id);
 
     openDetails({ active: true, data: findProject });
   };
 
   return (
-    <section id="projects">
-      <h2 className={styles.title}>
-        {projects.active[language]} {active.length}
-      </h2>
+    <section id="projektit">
+      <h2 className={styles.title}>Käynnissä olevat projektit {active.length}</h2>
       <div className={styles.blocks} onClick={open}>
         {inprocess}
       </div>
       <h2 className={styles.title} id="finished">
-        {projects.finished[language]} {finished.length}
+        Valmistuneet projektit {finished.length}
       </h2>
       <div className={styles.blocks} onClick={open}>
         {outprocess}
       </div>
       {outprocess.length > 3 && (
-        <a
-          href="#finished"
-          className="button fill extend"
-          onClick={toggleHandler}
-        >
-          {toggle ? projects.hide[language] : projects.show[language]}
+        <a href="#finished" className="button fill extend" onClick={toggleHandler}>
+          {toggle ? 'Piilottaa' : 'Näytä kaikki'}
         </a>
       )}
     </section>

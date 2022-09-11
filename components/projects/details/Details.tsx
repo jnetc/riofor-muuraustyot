@@ -2,24 +2,20 @@ import { createPortal } from 'react-dom';
 import Image from 'next/image';
 // Hook
 import { useDetails } from '@Hooks/useDetails';
-import { useStore } from '@Hooks/useStore';
 import { useHideScrollbar } from '@Hooks/useHideScrollbar';
 // style
 import styles from './details.module.css';
 // Component
 import { CloseButton } from '@Components/close-button/CloseButton';
-// Lang
-import { labels, project_titles } from '@Lang';
 
 export const Details = () => {
-  const { language } = useStore();
   const {
     details: { data, active },
     openDetails,
   } = useDetails();
 
-  const converAddress = data?.address.split(' ').join('+');
-  const url = `https://www.google.fi/maps/place/${converAddress}`;
+  // const converAddress = data?.address.split(' ').join('+');
+  // const url = `https://www.google.fi/maps/place/${converAddress}`;
 
   const close = () => openDetails({ active: false, data: null });
 
@@ -41,8 +37,8 @@ export const Details = () => {
               />
             </div>
             <a
-              href={url}
-              className={`button fill`}
+              href={data.geolocation}
+              className={`button fill ${data.geolocation ? '' : 'disable'}`}
               target="_blank"
               rel="noreferrer"
             >
@@ -58,59 +54,32 @@ export const Details = () => {
             </a>
             <article className={styles.information}>
               <div className={`${styles.info_block} ${styles.left}`}>
-                <h3 className={styles.info_title}>
-                  {project_titles.project[language]}
-                </h3>
-                <p
-                  className={`paragraph ${styles.line}`}
-                  data-label={labels.number[language]}
-                >
+                <h3 className={styles.info_title}>Projektin tiedot</h3>
+                <p className={`paragraph ${styles.line}`} data-label="Numero">
                   {data.projectNumber}
                 </p>
-                <p
-                  className={`paragraph ${styles.line}`}
-                  data-label={labels.name[language]}
-                >
+                <p className={`paragraph ${styles.line}`} data-label="Projektin nimi">
                   {data.projectName}
                 </p>
-                <p
-                  className={`paragraph ${styles.line}`}
-                  data-label={labels.date[language]}
-                >
+                <p className={`paragraph ${styles.line}`} data-label="Valmistuminen">
                   {data.releaseDate}
                 </p>
-                <p
-                  className={`paragraph ${styles.line}`}
-                  data-label={labels.contractor[language]}
-                >
+                <p className={`paragraph ${styles.line}`} data-label="Urakoitsija">
                   {data.contractor}
                 </p>
-                <p
-                  className={`paragraph ${styles.line}`}
-                  data-label={labels.address[language]}
-                >
+                <p className={`paragraph ${styles.line}`} data-label="Osoite">
                   {data.address}
                 </p>
-                <p
-                  className={`paragraph ${styles.line}`}
-                  data-label={labels.jobtype[language]}
-                >
+                <p className={`paragraph ${styles.line}`} data-label="Työn tyyppi">
                   {data.jobType}
                 </p>
-                <p
-                  className={`paragraph ${styles.line}`}
-                  data-label={labels.area[language]}
-                >
+                <p className={`paragraph ${styles.line}`} data-label="Pinta-ala">
                   {data.area} m<sup>2</sup>
                 </p>
               </div>
               <div className={`${styles.info_block} ${styles.right}`}>
-                <h3 className={styles.info_title}>
-                  {project_titles.desc[language]}
-                </h3>
-                <p className={`${styles.description} paragraph`}>
-                  {data.projectDescription}
-                </p>
+                <h3 className={styles.info_title}>Lisä tiedot</h3>
+                <p className={`${styles.description} paragraph`}>{data.projectDescription}</p>
               </div>
             </article>
           </section>

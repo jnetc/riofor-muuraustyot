@@ -9,11 +9,6 @@ const withPWA = require('next-pwa')({
 
 module.exports = withPWA({
   reactStrictMode: true,
-  i18n: {
-    locales: ['fi', 'ru'],
-    defaultLocale: 'fi',
-    localeDetection: true,
-  },
   images: {
     domains: ['www.datocms-assets.com'],
   },

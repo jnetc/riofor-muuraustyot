@@ -12,13 +12,11 @@ import { CopyButton } from '@Components/copy-button';
 import { Phone } from '@Components/icons/Phone';
 import { Location } from '@Components/icons/Location';
 import { Email } from '@Components/icons/Email';
-// Lang
-import { labels } from '@Lang';
 
 export type Keys = 'email' | 'address' | 'phone';
 
 export const Contacts = () => {
-  const { data, language } = useStore();
+  const { data } = useStore();
   const {
     contacts: { active },
     openContacts,
@@ -50,16 +48,10 @@ export const Contacts = () => {
             />
           </a>
           <div className={styles.buttons}>
-            <a
-              href={`tel:${data.home.phone}`}
-              className={`${styles.button} ${styles.phone}`}
-            >
+            <a href={`tel:${data.home.phone}`} className={`${styles.button} ${styles.phone}`}>
               <Phone />
             </a>
-            <a
-              href={`mailto:${data.home.email}`}
-              className={`${styles.button} ${styles.email}`}
-            >
+            <a href={`mailto:${data.home.email}`} className={`${styles.button} ${styles.email}`}>
               <Email />
             </a>
             <a
@@ -73,31 +65,19 @@ export const Contacts = () => {
           </div>
           <div className={styles.info}>
             <CopyButton value={data.home.person} />
-            <p
-              className={`paragraph ${styles.line}`}
-              data-label={labels.person[language]}
-            >
+            <p className={`paragraph ${styles.line}`} data-label="Yhteyshenkilö">
               {data.home.person}
             </p>
             <CopyButton value={data.home.address} />
-            <p
-              className={`paragraph ${styles.line}`}
-              data-label={labels.address[language]}
-            >
+            <p className={`paragraph ${styles.line}`} data-label="Osoite">
               {data.home.address}
             </p>
             <CopyButton value={data.home.phone} />
-            <p
-              className={`paragraph ${styles.line}`}
-              data-label={labels.phone[language]}
-            >
+            <p className={`paragraph ${styles.line}`} data-label="Puhelin">
               {data.home.phone}
             </p>
             <CopyButton value={data.home.email} />
-            <p
-              className={`paragraph ${styles.line}`}
-              data-label={labels.email[language]}
-            >
+            <p className={`paragraph ${styles.line}`} data-label="Sähköposti">
               {data.home.email}
             </p>
           </div>

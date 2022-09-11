@@ -1,6 +1,6 @@
-import { ReactChild, Dispatch, SetStateAction } from 'react';
+import { ReactNode, Dispatch, SetStateAction } from 'react';
 
-export type LanguagesType = 'ru' | 'fi';
+// export type LanguagesType = 'ru' | 'fi';
 
 interface ArticleType<T> {
   title: T;
@@ -28,6 +28,7 @@ export interface ProjectType<T> extends ArticleType<T> {
   cloudLink: T;
   completed: boolean;
   contractor: T;
+  geolocation: T;
   id: T;
   jobType: T;
   projectDescription: T;
@@ -62,7 +63,7 @@ export interface DataType {
 }
 
 export interface NavMobLinksProps {
-  children: ReactChild;
+  children: ReactNode;
   open: boolean;
   handler: Dispatch<SetStateAction<boolean>>;
 }

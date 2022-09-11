@@ -5,11 +5,9 @@ import { PaperPlain } from '@Components/icons/PaperPlain';
 import { Projects } from '@Components/icons/Projects';
 // Styles
 import styles from './leftside.module.css';
-// Lang
-import { buttons_main } from '@Lang';
 
 export const LeftSide = () => {
-  const { data, language } = useStore();
+  const { data } = useStore();
   const { openContacts } = useContacts();
 
   const open = () => openContacts({ active: true });
@@ -20,14 +18,14 @@ export const LeftSide = () => {
       <p className="description-main">{data?.home.description}</p>
 
       <button className="button-with-icon fill fit" onClick={open}>
-        {buttons_main.offer[language]}
+        Ota yhteyttä
         <div className="btn-icon normal">
           <PaperPlain />
         </div>
       </button>
 
       <a href="#projects" className="button-with-icon line fit">
-        {buttons_main.projects[language]}
+        Projektit
         <div className="btn-icon normal">
           <Projects />
         </div>

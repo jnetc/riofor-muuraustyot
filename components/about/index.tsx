@@ -5,7 +5,7 @@ import styles from './about.module.css';
 
 const About = () => {
   return (
-    <section id="about" className={styles.module}>
+    <section id="meista" className={styles.module}>
       <LeftSide />
       <RightSide />
     </section>

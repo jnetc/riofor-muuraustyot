@@ -19,17 +19,11 @@ const Services = dynamic(() => import('@Components/services'));
 const Projects = dynamic(() => import('@Components/projects'));
 const About = dynamic(() => import('@Components/about'));
 const Footer = dynamic(() => import('@Components/footer'));
-const GoToTopButton = dynamic(
-  () => import('@Components/go-to-top/GoToTopButton')
-);
+const GoToTopButton = dynamic(() => import('@Components/go-to-top/GoToTopButton'));
 import { Details } from '@Components/projects/details/Details';
 import { Contacts } from '@Components/main/contacts';
 
-const Home: NextPage = ({
-  data,
-  language,
-  languages,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Home: NextPage = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const [details, openDetails] = useState({ active: false });
   const [contacts, openContacts] = useState({ active: false });
 
@@ -39,13 +33,10 @@ const Home: NextPage = ({
   const seo = data as DataType;
 
   return (
-    <Store.Provider value={{ language, languages, data }}>
+    <Store.Provider value={{ data }}>
       <Head>
         <title>{seo._site.globalSeo.fallbackSeo.title}</title>
-        <meta
-          name="description"
-          content={seo._site.globalSeo.fallbackSeo.description}
-        />
+        <meta name="description" content={seo._site.globalSeo.fallbackSeo.description} />
         <style dangerouslySetInnerHTML={{ __html: extraCSS }} />
       </Head>
       <Navigation />
@@ -73,12 +64,11 @@ export default Home;
 
 export const getStaticProps: GetStaticProps = async context => {
   const data = await request({ query, variables: { locale: context.locale } });
+  console.log(data);
 
   return {
     props: {
       data,
-      language: context.locale,
-      languages: context.locales,
     },
   };
 };
