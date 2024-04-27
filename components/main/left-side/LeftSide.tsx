@@ -24,7 +24,7 @@ export const LeftSide = () => {
         </div>
       </button>
 
-      <a href="#projects" className="button-with-icon line fit">
+      <a href="#projektit" className="button-with-icon line fit">
         Projektit
         <div className="btn-icon normal">
           <Projects />
